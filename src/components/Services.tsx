@@ -8,34 +8,58 @@ import {
   Clock, 
   Snowflake,
   Users,
-  Globe
+  Globe,
+  Truck
 } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
       icon: Baby,
-      title: "IVF Cryo Shipping",
-      description: "Specialized transport for frozen eggs, embryos, and sperm samples with temperature monitoring.",
-      features: ["Temperature-controlled transport", "Liquid nitrogen dry shippers", "Real-time monitoring", "Door-to-door service"]
+      title: "Frozen Embryo Transportation",
+      description: "Secure shipping of embryos using the frozen method with utmost care and reliability.",
+      features: ["Frozen embryo transport", "Strictest safety protocols", "Domestic & overseas delivery", "Pristine condition guarantee"]
     },
     {
       icon: Microscope,
-      title: "Stem Cell Shipping",
-      description: "Expert handling of stem cell samples for research institutions and medical facilities.",
-      features: ["Research-grade handling", "Chain of custody documentation", "Compliance protocols", "Secure transport"]
+      title: "Sperm Samples & Gametes",
+      description: "Seamless, secure delivery of sperm samples and gametes across the globe.",
+      features: ["Cargo & hand-carry packages", "Specially trained personnel", "Rigorous security measures", "State-of-the-art tracking"]
     },
     {
       icon: Package,
-      title: "Cryogenic Solutions",
-      description: "Complete cryogenic storage and transport solutions with trained personnel.",
-      features: ["Liquid nitrogen systems", "Custom packaging", "Trained onboard staff", "Safety protocols"]
+      title: "Frozen Donor Egg & Oocyte",
+      description: "Safe and efficient shipping of frozen donor eggs, oocytes, and biomaterials.",
+      features: ["Cryopreservation expertise", "Optimal transit conditions", "Global network partners", "Swift delivery coordination"]
     },
     {
       icon: Globe,
-      title: "Global Logistics",
-      description: "Worldwide shipping with customs support and regulatory compliance.",
-      features: ["Customs clearance", "International permits", "Regulatory compliance", "24/7 tracking"]
+      title: "Stem Cell Shipping",
+      description: "Expert handling for research laboratories and medical facilities worldwide.",
+      features: ["Research-grade handling", "Chain of custody documentation", "Compliance protocols", "Secure transport"]
+    }
+  ];
+
+  const features = [
+    {
+      icon: Truck,
+      title: "Carry-on Baggage Transportation",
+      description: "All shipments are hand carried on board aircraft. Never risking valuable cryoshipments in luggage hold.",
+    },
+    {
+      icon: MapPin,
+      title: "Customs Clearance Services",
+      description: "Comprehensive customs clearance and documentation from pickup through all customs procedures.",
+    },
+    {
+      icon: Clock,
+      title: "Real-time Tracking",
+      description: "5G state-of-the-art online tracking system supporting 200+ countries with temperature monitoring.",
+    },
+    {
+      icon: Snowflake,
+      title: "Temperature Data Logger",
+      description: "Built-in temperature logger ensures -196°C is maintained during entire transportation process.",
     }
   ];
 
@@ -87,6 +111,36 @@ const Services = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Additional Features Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h3 className="font-poppins font-bold text-3xl text-foreground mb-4">
+              Why Choose ARKGlobal
+            </h3>
+            <p className="font-inter text-muted-foreground">
+              Industry-leading features that set us apart
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="flex gap-4 p-6 bg-gradient-light rounded-xl border border-border">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <feature.icon className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-poppins font-semibold text-lg text-foreground mb-2">
+                    {feature.title}
+                  </h4>
+                  <p className="font-inter text-muted-foreground">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Stats Section */}

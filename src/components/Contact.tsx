@@ -72,7 +72,8 @@ const Contact = () => {
                 Request a Quote
               </CardTitle>
               <p className="font-inter text-muted-foreground">
-                Tell us about your shipping requirements and we'll get back to you within 24 hours.
+                We would gladly provide you with detailed information if you have any queries. 
+                We will respond within 24 hours.
               </p>
             </CardHeader>
             <CardContent className="space-y-6">
