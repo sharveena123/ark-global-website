@@ -24,7 +24,7 @@ const Hero = () => {
                 Your Trusted
                 <span className="text-primary block">Cryo Shipper</span>
               </h1>
-              <p className="font-inter text-xl text-muted-foreground leading-relaxed">
+              <p className="font-inter text-xl text-foreground/70 leading-relaxed">
                 Southeast Asia's leading specialist in cryogenic shipping for IVF samples, 
                 embryos, and stem cells. IATA compliant with door-to-door service ensuring 
                 complete cold chain integrity.
@@ -71,7 +71,7 @@ const Hero = () => {
 
             {/* Trust Indicators */}
             <div className="pt-8 border-t border-border">
-              <p className="font-inter text-sm text-muted-foreground mb-4">
+              <p className="font-inter text-sm text-foreground/60 mb-4">
                 Trusted by leading fertility clinics and research institutions
               </p>
               <div className="flex flex-wrap gap-6 text-sm font-inter font-medium text-foreground">

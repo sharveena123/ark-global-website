@@ -9,7 +9,7 @@ Typography: Poppins (headings), Inter (body)
 
 @layer base {
   :root {
-    /* Brand Colors */
+    /* Brand Colors - Fixed HSL values for proper contrast */
     --background: 0 0% 100%; /* Pure white */
     --foreground: 209 83% 15%; /* Dark navy #0A2540 */
 
@@ -27,9 +27,9 @@ Typography: Poppins (headings), Inter (body)
     --secondary: 189 55% 94%;
     --secondary-foreground: 209 83% 15%;
 
-    /* Muted: Blue-gray #6C7A89 */
-    --muted: 213 12% 48%;
-    --muted-foreground: 0 0% 100%;
+    /* Muted: Blue-gray #6C7A89 - Fixed for better contrast */
+    --muted: 213 14% 48%;
+    --muted-foreground: 209 83% 15%;
 
     /* Accent: Primary cyan variant */
     --accent: 195 100% 47%;
@@ -75,29 +75,29 @@ Typography: Poppins (headings), Inter (body)
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 209 83% 15%;
+    --foreground: 0 0% 100%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 209 83% 15%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 209 83% 15%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 195 100% 47%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 213 14% 25%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 213 14% 25%;
+    --muted-foreground: 0 0% 80%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 195 100% 47%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
