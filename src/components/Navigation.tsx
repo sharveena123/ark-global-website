@@ -7,7 +7,7 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Home", href: "#home" },
-    { name: "Company", href: "#company" },
+    { name: "Corporate", href: "#company" },
     { name: "Business", href: "#business" },
     { name: "Reach Us", href: "#contact" },
   ];
@@ -15,29 +15,12 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
-        {/* Top contact bar */}
-        <div className="hidden md:flex items-center justify-end py-2 text-sm border-b border-border/50">
-          <div className="flex items-center gap-6 text-muted-foreground font-inter">
-            <a href="tel:+60122196896" className="flex items-center gap-2 hover:text-primary transition-smooth">
-              <Phone className="w-3 h-3" />
-              +60 12-219 6896
-            </a>
-            <a href="mailto:info@arkglobalasia.com" className="flex items-center gap-2 hover:text-primary transition-smooth">
-              <Mail className="w-3 h-3" />
-              info@arkglobalasia.com
-            </a>
-          </div>
-        </div>
-
         {/* Main navigation */}
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-5">
           <div className="flex items-center">
-            <h1 className="font-poppins font-bold text-2xl text-foreground">
-              ARK<span className="text-primary">Global</span>
+            <h1 className="font-poppins font-bold text-3xl text-foreground">
+              ARK<span className="text-primary">GLOBAL</span>
             </h1>
-            <span className="ml-2 text-sm text-muted-foreground font-inter hidden md:block">
-              Your Trusted Cryo Shipper
-            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -46,14 +29,11 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="font-inter font-medium text-foreground hover:text-primary transition-smooth"
+                className="font-inter text-base text-foreground hover:text-primary transition-smooth"
               >
                 {item.name}
               </a>
             ))}
-            <Button variant="hero" size="sm">
-              Get Quote
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -79,11 +59,6 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
-              <div className="pt-4 border-t border-border">
-                <Button variant="hero" size="sm" className="w-full">
-                  Get Quote
-                </Button>
-              </div>
             </div>
           </div>
         )}
