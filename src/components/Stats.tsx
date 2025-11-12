@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Plane, Thermometer, Users, Clock } from "lucide-react";
 
 const Stats = () => {
@@ -8,6 +8,8 @@ const Stats = () => {
     clients: 0,
     years: 0
   });
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const sectionRef = useRef(null);
 
   const stats = [
     { icon: Plane, label: "Successful Cryo Deliveries", value: 584, key: "deliveries" },
@@ -16,9 +18,10 @@ const Stats = () => {
     { icon: Clock, label: "Years of Experience", value: 8, key: "years" }
   ];
 
-  useEffect(() => {
-    const duration = 2000;
-    const steps = 60;
+  // Function to start the number animation
+  const startAnimation = () => {
+    const duration = 800;
+    const steps = 40;
     
     stats.forEach((stat) => {
       let current = 0;
@@ -37,13 +40,31 @@ const Stats = () => {
         }));
       }, duration / steps);
     });
-  }, []);
+  };
+
+  // Observe when section comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          startAnimation();
+        }
+      },
+      { threshold: 0.4 } // Trigger when 40% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, [hasAnimated]);
 
   return (
-    <section className="py-20 bg-gradient-subtle">
-      {/* Background Pattern */}
-
-      
+    <section ref={sectionRef} className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-poppins font-bold text-4xl lg:text-5xl text-foreground mb-4">
