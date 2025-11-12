@@ -67,10 +67,11 @@ const VisitorCounter = () => {
     },
   ];
 
+
   return (
     <section className="py-16 bg-gradient-light">
       <div className="container mx-auto px-4">
-        {/* Header */}
+        {/* Header 21 */}
         <div className="text-center mb-12">
           <h2 className="font-poppins font-bold text-3xl text-foreground mb-4">
             Website Analytics
