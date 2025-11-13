@@ -4,10 +4,11 @@ import Stats from "@/components/Stats";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
-import VisitorCounter from "@/components/VisitorCounter";
+import VisitorCounter from "@/components/WhyUs";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsappButton";
+import WhyUs from "@/components/WhyUs";
 
 const Index = () => {
   return (
@@ -19,7 +20,7 @@ const Index = () => {
       <Stats />
       <About />
       <Testimonials />
-      <VisitorCounter />
+      <WhyUs />
       <Contact />
       <Footer />
     </div>
