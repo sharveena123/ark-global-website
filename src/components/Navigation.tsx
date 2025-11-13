@@ -8,7 +8,7 @@ const Navigation: React.FC = () => {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
-      const headerOffset = 120;
+      const headerOffset = 70;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 

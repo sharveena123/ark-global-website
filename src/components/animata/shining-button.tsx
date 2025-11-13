@@ -4,8 +4,27 @@ import { cn } from "@/lib/utils";
 
 export default function ShiningButton() {
   const label = "Contact Us";
+  
+  const handleContactScroll = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const element = document.getElementById('contact');
+    if (element) {
+      const headerOffset = 60; // Account for the fixed navigation
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <button className="group cursor-pointer rounded-full border-4 border-blue-800 border-opacity-0 bg-transparent p-1 transition-all duration-500 hover:border-opacity-100">
+    <button 
+      onClick={handleContactScroll}
+      className="group cursor-pointer rounded-full border-4 border-blue-800 border-opacity-0 bg-transparent p-1 transition-all duration-500 hover:border-opacity-100"
+    >
       <div className="relative flex items-center justify-center gap-4 overflow-hidden rounded-full bg-blue-800 px-6 py-4 font-bold text-white">
         {label}
         <ArrowRight className="transition-all group-hover:translate-x-2 group-hover:scale-125" />

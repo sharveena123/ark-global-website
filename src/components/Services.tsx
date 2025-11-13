@@ -2,11 +2,8 @@
 
 import { motion, Variants, easeOut } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { 
-  Baby, Microscope, Package, MapPin, Clock, 
-  Snowflake, Users, Globe, Truck, Thermometer, 
-  ShieldCheck, CheckCheck
+  Baby, Microscope, Package,Globe
 } from "lucide-react";
 
 
@@ -38,36 +35,6 @@ const Services = () => {
     }
   ];
 
-  const features = [
-    {
-      icon: Truck,
-      title: "Carry-on Baggage Transportation",
-      description: "All samples are hand-carried door to door by trained onboard couriers for maximum safety.",
-    },
-    {
-      icon: Thermometer,
-      title: "Temperature Control",
-      description: "Each shipment is kept at optimal liquid nitrogen levels inside dry shipper dewars throughout transit.",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Compliance & Safety",
-      description: "All cryo deliveries meet IATA standards and EU-Tissue Directives for international transport.",
-    },
-    {
-      icon: CheckCheck,
-      title: "Trusted Experience",
-      description: "Years of proven success working with fertility clinics and IVF patients worldwide.",
-    }
-  ];
-
-  const stats = [
-    { icon: Clock, number: "24/7", label: "Monitoring & Support" },
-    { icon: Snowflake, number: "-196°C", label: "Temperature Control" },
-    { icon: Users, number: "900+", label: "Successful Deliveries" },
-    { icon: MapPin, number: "50+", label: "Countries Served" }
-  ];
-
   // 🔹 Motion variants
   const container: Variants = {
     hidden: {},
@@ -85,7 +52,7 @@ const Services = () => {
 
   return (
     <section id="business" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+      <div className="container py-12 mx-auto px-4">
 
         {/* Header */}
         <motion.div
@@ -149,46 +116,6 @@ const Services = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Additional Features Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={container}
-          className="mb-20"
-        >
-          <div className="text-center py-16 mb-12">
-            <motion.h3 variants={fadeUp(0)} className="font-poppins font-bold text-3xl text-foreground mb-4">
-              Why Choose ARKGlobal
-            </motion.h3>
-            <motion.p variants={fadeUp(0.1)} className="font-inter text-muted-foreground">
-              Industry-leading features that set us apart
-            </motion.p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <motion.div key={index} variants={fadeUp(index * 0.1)}>
-                <div className="flex gap-4 p-6 bg-gradient-light rounded-xl border border-border">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-poppins font-semibold text-lg text-foreground mb-2">
-                      {feature.title}
-                    </h4>
-                    <p className="font-inter text-muted-foreground">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-
       </div>
     </section>
   );

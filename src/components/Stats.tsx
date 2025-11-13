@@ -1,12 +1,42 @@
 import { useEffect, useRef, useState } from "react";
-import { Plane, Thermometer, Users, Clock } from "lucide-react";
+import { Plane, Thermometer, Users, Clock, Eye, TrendingUp } from "lucide-react";
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, onValue, get, set, runTransaction } from "firebase/database";
+
+// Firebase config
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+};
+
+// Initialize Firebase only once
+let app;
+let db;
+try {
+  app = initializeApp(firebaseConfig);
+  db = getDatabase(app);
+} catch (error) {
+  // If already initialized, get the existing instance
+  app = initializeApp(firebaseConfig);
+  db = getDatabase(app);
+}
+
+// Track if visitor has been counted in this session
+let visitorCounted = false;
 
 const Stats = () => {
   const [counters, setCounters] = useState({
     deliveries: 0,
     countries: 0,
     clients: 0,
-    years: 0
+    years: 0,
+    totalVisitors: 0,
+    todayVisitors: 0
   });
   const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef(null);
@@ -17,6 +47,46 @@ const Stats = () => {
     { icon: Users, label: "Satisfied Clients", value: 899, key: "clients" },
     { icon: Clock, label: "Years of Experience", value: 3, key: "years" }
   ];
+
+  // Initialize Firebase visitor tracking
+  useEffect(() => {
+    const totalRef = ref(db, "visitors/total");
+    const todayRef = ref(db, "visitors/today");
+    const lastResetRef = ref(db, "visitors/lastReset");
+
+    const initializeVisitors = async () => {
+      try {
+        const today = new Date().toISOString().split('T')[0];
+        const lastResetSnap = await get(lastResetRef);
+        const lastReset = lastResetSnap.val();
+
+        if (lastReset !== today) {
+          await set(todayRef, 0);
+          await set(lastResetRef, today);
+        }
+
+        await runTransaction(totalRef, (currentValue) => (currentValue || 0) + 1);
+        await runTransaction(todayRef, (currentValue) => (currentValue || 0) + 1);
+      } catch (error) {
+        console.error("Error initializing visitors:", error);
+      }
+    };
+
+    initializeVisitors();
+
+    const unsubscribeTotal = onValue(totalRef, (snap) => {
+      setCounters((prev) => ({ ...prev, totalVisitors: snap.val() || 0 }));
+    });
+
+    const unsubscribeToday = onValue(todayRef, (snap) => {
+      setCounters((prev) => ({ ...prev, todayVisitors: snap.val() || 0 }));
+    });
+
+    return () => {
+      unsubscribeTotal();
+      unsubscribeToday();
+    };
+  }, []);
 
   // Function to start the number animation
   const startAnimation = () => {
@@ -64,7 +134,7 @@ const Stats = () => {
   }, [hasAnimated]);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-subtle relative">
+    <section ref={sectionRef} className="py-4 bg-gradient-subtle relative">
       {/* Top Collage Image */}
       <div className="w-full overflow-hidden">
         <img 
@@ -109,13 +179,50 @@ const Stats = () => {
           })}
         </div>
 
-        {/* Additional Info */}
-        <div className="mt-16 text-center">
-          <div className="bg-background/90 backdrop-blur-sm rounded-xl p-6 inline-block shadow-elegant border border-border/50">
-            <p className="font-inter text-foreground/80 gap-8">
-              <span className="font-semibold text-primary">• 100% Success Rate</span>   
-              <span className="font-semibold text-primary ml-8">  • 24/7 Monitoring</span>
-            </p>
+        {/* Live Visitor Analytics */}
+        <div className="mt-16">
+          <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-3xl p-8 border border-primary/20">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="relative flex items-center justify-center">
+                {/* Core dot */}
+                <div className="w-3 h-3 bg-green-500 rounded-full z-10"></div>
+                {/* First pulse ring */}
+                <div className="absolute w-3 h-3 bg-green-500 rounded-full animate-ping opacity-40"></div>
+                {/* Second pulse ring */}
+                <div className="absolute w-4 h-4 bg-green-400 rounded-full animate-ping opacity-30" style={{ animationDelay: '0.5s' }}></div>
+              </div>
+              <h3 className="font-poppins font-semibold text-xl text-foreground">
+                Live Website Analytics
+              </h3>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="bg-background/60 backdrop-blur-sm rounded-xl p-6 text-center border border-border/30">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <Eye className="w-6 h-6 text-primary" />
+                  <p className="font-inter text-sm text-muted-foreground font-medium">Total Visitors</p>
+                </div>
+                <div className="font-poppins font-bold text-4xl text-primary">
+                  {counters.totalVisitors.toLocaleString()}
+                </div>
+              </div>
+
+              <div className="bg-background/60 backdrop-blur-sm rounded-xl p-6 text-center border border-border/30">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <TrendingUp className="w-6 h-6 text-accent" />
+                  <p className="font-inter text-sm text-muted-foreground font-medium">Today's Visitors</p>
+                </div>
+                <div className="font-poppins font-bold text-4xl text-accent">
+                  {counters.todayVisitors.toLocaleString()}
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-6 text-center">
+              <p className="font-inter text-xs text-muted-foreground">
+                <span className="text-primary font-semibold">●</span> Real-time updates • Last synced just now
+              </p>
+            </div>
           </div>
         </div>
       </div>

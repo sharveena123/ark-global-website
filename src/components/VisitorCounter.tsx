@@ -1,126 +1,89 @@
-import { useEffect, useState } from "react";
-import { Eye, Globe, TrendingUp } from "lucide-react";
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, onValue, set, get, increment, runTransaction, serverTimestamp } from "firebase/database";
+import { CheckCheck, ShieldCheck, Thermometer, Truck } from "lucide-react";
+import { easeOut, motion, Variants } from "framer-motion";
 
-// ✅ Your Firebase config
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-};
-
-
-// Initialize Firebase once
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
 
 const VisitorCounter = () => {
-  const [visitorData, setVisitorData] = useState({
-    total: 0,
-    today: 0,
+const container: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.12 } },
+  };
+
+  const fadeUp = (delay = 0): Variants => ({
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: easeOut, delay },
+    },
   });
 
-  useEffect(() => {
-    const totalRef = ref(db, "visitors/total");
-    const todayRef = ref(db, "visitors/today");
-
-    // ✅ Increment total visitors on each page load
-    runTransaction(totalRef, (currentValue) => (currentValue || 0) + 1);
-
-    // ✅ Increment today's visitors
-    runTransaction(todayRef, (currentValue) => (currentValue || 0) + 1);
-
-    // ✅ Listen to real-time updates
-    const unsubscribeTotal = onValue(totalRef, (snap) => {
-      setVisitorData((prev) => ({ ...prev, total: snap.val() || 0 }));
-    });
-
-    const unsubscribeToday = onValue(todayRef, (snap) => {
-      setVisitorData((prev) => ({ ...prev, today: snap.val() || 0 }));
-    });
-
-    return () => {
-      unsubscribeTotal();
-      unsubscribeToday();
-    };
-  }, []);
-
-  const stats = [
+  const features = [
     {
-      icon: Eye,
-      label: "Total Visitors",
-      value: visitorData.total,
-      color: "text-primary",
-      bg: "bg-primary/10",
+      icon: Truck,
+      title: "Carry-on Baggage Transportation",
+      description: "All samples are hand-carried door to door by trained onboard couriers for maximum safety.",
     },
     {
-      icon: TrendingUp,
-      label: "Today's Visitors",
-      value: visitorData.today,
-      color: "text-accent",
-      bg: "bg-accent/10",
+      icon: Thermometer,
+      title: "Temperature Control",
+      description: "Each shipment is kept at optimal liquid nitrogen levels inside dry shipper dewars throughout transit.",
     },
+    {
+      icon: ShieldCheck,
+      title: "Compliance & Safety",
+      description: "All cryo deliveries meet IATA standards and EU-Tissue Directives for international transport.",
+    },
+    {
+      icon: CheckCheck,
+      title: "Trusted Experience",
+      description: "Years of proven success working with fertility clinics and IVF patients worldwide.",
+    }
   ];
 
 
   return (
     <section className="py-16 bg-gradient-light">
       <div className="container mx-auto px-4">
-        {/* Header 21 */}
-        <div className="text-center mb-12">
-          <h2 className="font-poppins font-bold text-3xl text-foreground mb-4">
-            Website Analytics
-          </h2>
-          <p className="font-inter text-muted-foreground">
-            Real-time visitor statistics and engagement metrics
-          </p>
-        </div>
 
-        {/* Visitor Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <div
-                key={index}
-                className="bg-background/80 backdrop-blur-sm rounded-xl p-8 shadow-elegant border border-border/50 text-center transition-transform hover:scale-[1.02]"
-              >
-                <div
-                  className={`w-16 h-16 ${stat.bg} rounded-2xl flex items-center justify-center mx-auto mb-6`}
-                >
-                  <Icon className={`w-8 h-8 ${stat.color}`} />
-                </div>
-
-                <div className="space-y-2">
-                  <div
-                    className={`font-poppins font-bold text-4xl ${stat.color}`}
-                  >
-                    {stat.value.toLocaleString()}
-                  </div>
-                  <p className="font-inter text-base text-muted-foreground">
-                    {stat.label}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Footer Info */}
-        <div className="mt-12 text-center">
-          <div className="bg-background/90 backdrop-blur-sm rounded-xl p-4 inline-block shadow-elegant border border-border/50">
-            <p className="font-inter text-sm text-muted-foreground">
-              <span className="text-primary font-semibold">Last updated:</span>{" "}
-              Just now • <span className="text-primary font-semibold">Live counts</span>
-            </p>
+        {/* Additional Features Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={container}
+          className="mb-20"
+        >
+          <div className="text-center py-12 mb-12">
+            <motion.h3 variants={fadeUp(0)} className="font-poppins font-bold text-3xl text-foreground mb-4">
+              Why Choose ARKGlobal
+            </motion.h3>
+            <motion.p variants={fadeUp(0.1)} className="font-inter text-muted-foreground">
+              Industry-leading features that set us apart
+            </motion.p>
           </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <motion.div key={index} variants={fadeUp(index * 0.1)}>
+                <div className="flex gap-4 p-6 bg-gradient-light rounded-xl border border-border">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-poppins font-semibold text-lg text-foreground mb-2">
+                      {feature.title}
+                    </h4>
+                    <p className="font-inter text-muted-foreground">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         </div>
-      </div>
     </section>
   );
 };
