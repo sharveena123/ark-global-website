@@ -5,34 +5,36 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { 
   Baby, Microscope, Package, MapPin, Clock, 
-  Snowflake, Users, Globe, Truck 
+  Snowflake, Users, Globe, Truck, Thermometer, 
+  ShieldCheck, CheckCheck
 } from "lucide-react";
+
 
 const Services = () => {
   const services = [
     {
       icon: Baby,
-      title: "Frozen Embryo Transportation",
-      description: "Secure shipping of embryos using the frozen method with utmost care and reliability.",
-      features: ["Frozen embryo transport", "Strictest safety protocols", "Domestic & overseas delivery", "Pristine condition guarantee"]
+      title: "Frozen Eggs Transportation",
+      description: "Reliable cryogenic shipping that keeps eggs safe and temperature-stable from clinic to clinic.",
+      features: ["Maintains cryogenic temperature", "IATA & EU compliant", "Hand-carried by trained couriers", "Flexible pickup & delivery"]
     },
     {
       icon: Microscope,
-      title: "Sperm Samples & Gametes",
-      description: "Seamless, secure delivery of sperm samples and gametes across the globe.",
-      features: ["Cargo & hand-carry packages", "Specially trained personnel", "Rigorous security measures", "State-of-the-art tracking"]
+      title: "Frozen Embryos Transportation",
+      description: "Secure door-to-door transport using specialized dry shippers to preserve embryo viability.",
+      features: ["Specialized dry shippers", "Continuous temp monitoring", "Secure door-to-door delivery", "International standard compliance"]
     },
     {
       icon: Package,
-      title: "Frozen Donor Egg & Oocyte",
-      description: "Safe and efficient shipping of frozen donor eggs, oocytes, and biomaterials.",
-      features: ["Cryopreservation expertise", "Optimal transit conditions", "Global network partners", "Swift delivery coordination"]
+      title: "Sperm Samples Transportation",
+      description: "Expert handling and advanced preservation methods for global stem cell transport.",
+      features: ["Liquid nitrogen dewars", "Stable & contamination-free", "Confidential handling", "Fast global delivery"]
     },
     {
       icon: Globe,
       title: "Stem Cell Shipping",
       description: "Expert handling for research laboratories and medical facilities worldwide.",
-      features: ["Research-grade handling", "Chain of custody documentation", "Compliance protocols", "Secure transport"]
+      features: ["Advanced preservation methods", "Certified long-distance transport", "Expert biological handlers", "Trusted by clinics & labs"]
     }
   ];
 
@@ -40,29 +42,29 @@ const Services = () => {
     {
       icon: Truck,
       title: "Carry-on Baggage Transportation",
-      description: "All shipments are hand carried on board aircraft. Never risking valuable cryoshipments in luggage hold.",
+      description: "All samples are hand-carried door to door by trained onboard couriers for maximum safety.",
     },
     {
-      icon: MapPin,
-      title: "Customs Clearance Services",
-      description: "Comprehensive customs clearance and documentation from pickup through all customs procedures.",
+      icon: Thermometer,
+      title: "Temperature Control",
+      description: "Each shipment is kept at optimal liquid nitrogen levels inside dry shipper dewars throughout transit.",
     },
     {
-      icon: Clock,
-      title: "Real-time Tracking",
-      description: "5G state-of-the-art online tracking system supporting 200+ countries with temperature monitoring.",
+      icon: ShieldCheck,
+      title: "Compliance & Safety",
+      description: "All cryo deliveries meet IATA standards and EU-Tissue Directives for international transport.",
     },
     {
-      icon: Snowflake,
-      title: "Temperature Data Logger",
-      description: "Built-in temperature logger ensures -196°C is maintained during entire transportation process.",
+      icon: CheckCheck,
+      title: "Trusted Experience",
+      description: "Years of proven success working with fertility clinics and IVF patients worldwide.",
     }
   ];
 
   const stats = [
     { icon: Clock, number: "24/7", label: "Monitoring & Support" },
     { icon: Snowflake, number: "-196°C", label: "Temperature Control" },
-    { icon: Users, number: "500+", label: "Successful Deliveries" },
+    { icon: Users, number: "900+", label: "Successful Deliveries" },
     { icon: MapPin, number: "50+", label: "Countries Served" }
   ];
 
@@ -186,52 +188,7 @@ const Services = () => {
           </div>
         </motion.div>
 
-        {/* Stats Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={container}
-          className="bg-secondary rounded-2xl p-8 lg:p-12"
-        >
-          <div className="text-center mb-12">
-            <motion.h3 variants={fadeUp(0)} className="font-poppins font-bold text-3xl text-foreground mb-4">
-              Proven Excellence in Cryo Logistics
-            </motion.h3>
-            <motion.p variants={fadeUp(0.1)} className="font-inter text-muted-foreground">
-              Our track record speaks for itself
-            </motion.p>
-          </div>
-          
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div key={index} variants={fadeUp(index * 0.1)} className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-primary" />
-                </div>
-                <div className="font-poppins font-bold text-3xl text-foreground mb-2">
-                  {stat.number}
-                </div>
-                <div className="font-inter text-muted-foreground">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp(0.1)}
-          className="text-center mt-16"
-        >
-          <Button size="lg" className="text-lg">
-            Discuss Your Shipping Requirements
-          </Button>
-        </motion.div>
       </div>
     </section>
   );

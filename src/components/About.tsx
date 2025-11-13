@@ -10,58 +10,52 @@ import {
   Thermometer,
   HeartHandshake,
   Heart,
-  TrendingUp
+  TrendingUp,
+  ShieldCheck,
+  Flame
 } from "lucide-react";
+import {
+  Marquee,
+  MarqueeContent,
+  MarqueeFade,
+  MarqueeItem,
+} from '@/components/ui/Marquee';
+
 
 const About = () => {
-  const certifications = [
-    {
-      icon: Shield,
-      title: "IATA Standards",
-      description: "Full compliance with International Air Transport Association regulations for dangerous goods shipping."
-    },
-    {
-      icon: FileCheck,
-      title: "EU Tissue Directives",
-      description: "Compliant with EU Directives 2004/23/CE, 2006/17/EC, and 2006/86/EC for tissue handling."
-    },
-    {
-      icon: Award,
-      title: "Quality Assurance",
-      description: "Rigorous quality management systems ensuring consistent, reliable service delivery."
-    },
-    {
-      icon: Thermometer,
-      title: "Cold Chain Certified",
-      description: "Specialized certification in cryogenic transport and liquid nitrogen handling protocols."
-    }
-  ];
 
-  const values = [
-    {
-      icon: Heart,
-      title: "Passion",
-      description: "Driven to advance supply chain solutions for the life sciences industry while never losing sight of our value to humanity."
-    },
-    {
-      icon: Shield,
-      title: "Integrity",
-      description: "We operate with honesty, truthfulness and transparency in accordance to the highest ethical and corporate governance standards."
-    },
-    {
-      icon: Users,
-      title: "Teamwork",
-      description: "We get things done through commitment, collaboration, and mutual respect. None of us is as smart as all of us."
-    },
-    {
-      icon: TrendingUp,
-      title: "Value Creation",
-      description: "We strive to build value for all stakeholders through client-centric focus and exceeding competitive benchmarks."
-    }
-  ];
-
+  const coreValues = [
+  {
+    title: "Passion",
+    description:
+      "Driven to advance supply chain solutions for the life sciences industry while never losing sight of our value to humanity.",
+    icon: <Flame className="w-6 h-6" />,
+    position: "top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
+  },
+  {
+    title: "Integrity",
+    description:
+      "We operate with honesty, truthfulness and transparency in accordance to the highest ethical and corporate governance standards.",
+    icon: <ShieldCheck className="w-6 h-6" />,
+    position: "right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2",
+  },
+  {
+    title: "Teamwork",
+    description:
+      "We get things done through commitment, collaboration, and mutual respect. None of us is as smart as all of us.",
+    icon: <Users className="w-6 h-6" />,
+    position: "bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2",
+  },
+  {
+    title: "Value Creation",
+    description:
+      "We strive to build value for all stakeholders through client-centric focus and exceeding competitive benchmarks.",
+    icon: <TrendingUp className="w-6 h-6" />,
+    position: "left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2",
+  },
+];
   return (
-    <section id="company" className="py-20 bg-gradient-light">
+    <section id="company" className="py-20 ">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -113,83 +107,91 @@ const About = () => {
             </div>
           </div>
         </div>
+               
+ {/* Core Values */}
+        <div className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="font-poppins font-bold text-4xl lg:text-5xl text-foreground mb-6">
+                Our <span className="text-primary">Core Values</span>
+              </h2>
+              <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
+                The principles that guide everything we do
+              </p>
+            </div>
 
-        {/* Core Values */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="font-poppins font-bold text-3xl text-foreground mb-4">
-              Core Values
-            </h3>
-            <p className="font-inter text-muted-foreground">
-              The principles that guide everything we do
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {values.map((value, index) => (
-              <div key={index} className="flex gap-4 p-6 bg-gradient-light rounded-xl border border-border">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <value.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-poppins font-semibold text-lg text-foreground mb-2">
-                    {value.title}
-                  </h4>
-                  <p className="font-inter text-muted-foreground">
-                    {value.description}
-                  </p>
-                </div>
+            {/* Orbit container */}
+            <div className="flex justify-center mb-20">
+              <div className="relative w-[350px] h-[350px] sm:w-[420px] sm:h-[420px] flex items-center justify-center">
+                {/* Outer and inner circles */}
+                <div className="absolute w-full h-full rounded-full border-2 border-primary/20"></div>
+
+        {/* Value icons around the orbit */}
+                {coreValues.map((value, idx) => (
+                  <div
+                    key={idx}
+                    className={`absolute ${value.position} flex flex-col items-center text-center w-40`}
+                  >
+                    <div className="bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-soft mb-2 hover:scale-110 transition-transform">
+                      {value.icon}
+                    </div>
+                    <p className="font-poppins font-semibold text-sm text-foreground">{value.title}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
-        {/* Certifications */}
-        <div className="bg-background rounded-2xl p-8 lg:p-12 shadow-soft">
-          <div className="text-center mb-12">
-            <h3 className="font-poppins font-bold text-3xl text-foreground mb-4">
-              Certifications & Compliance
-            </h3>
-            <p className="font-inter text-muted-foreground">
-              Meeting the highest international standards for cryogenic transport
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {certifications.map((cert, index) => (
-              <div key={index} className="text-center space-y-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto">
-                  <cert.icon className="w-8 h-8 text-primary" />
-                </div>
-                <h4 className="font-poppins font-semibold text-lg text-foreground">
-                  {cert.title}
-                </h4>
-                <p className="font-inter text-sm text-muted-foreground">
-                  {cert.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Assurance Statement */}
-          <div className="mt-12 p-6 bg-secondary rounded-xl border-l-4 border-primary">
-            <div className="flex items-start gap-3">
-              <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="font-poppins font-semibold text-lg text-foreground mb-2">
-                  Our Assurance to You
-                </h4>
-                <p className="font-inter text-muted-foreground">
-                  Every shipment is handled with the highest level of care, monitored continuously, 
-                  and delivered with complete documentation. We provide peace of mind for patients 
-                  and clinics through our proven track record of successful deliveries with zero 
-                  damage incidents.
-                </p>
-              </div>
+            {/* Value descriptions */}
+            <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {coreValues.map((value, idx) => (
+                <Card key={idx} className="border-border shadow-soft hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="bg-primary/10 text-primary rounded-lg w-10 h-10 flex items-center justify-center">
+                        {value.icon}
+                      </div>
+                      <h4 className="font-poppins font-semibold text-xl text-foreground">
+                        {value.title}
+                      </h4>
+                    </div>
+                    <p className="font-inter text-muted-foreground">{value.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+         <Marquee>
+  <MarqueeFade side="left" />
+  <MarqueeFade side="right" />
+  <MarqueeContent>
+    <MarqueeItem className="mx-8">
+      <span className="neon-text">✅ IATA Approved</span>
+    </MarqueeItem>
+    <MarqueeItem className="mx-8">
+      <span className="neon-text">❄️ Cryogenic Experts</span>
+    </MarqueeItem>
+    <MarqueeItem className="mx-8">
+      <span className="neon-text">🧬 EU Tissue Compliant</span>
+    </MarqueeItem>
+    <MarqueeItem className="mx-8">
+      <span className="neon-text">💎 Quality Assured</span>
+    </MarqueeItem>
+    <MarqueeItem className="mx-8">
+      <span className="neon-text">🌐 Global Safe Delivery</span>
+    </MarqueeItem>
+    <MarqueeItem className="mx-8">
+      <span className="neon-text">🛡️ Zero Damage Incidents</span>
+    </MarqueeItem>
+    <MarqueeItem className="mx-8">
+      <span className="neon-text">📦 Cold Chain Certified</span>
+    </MarqueeItem>
+    <MarqueeItem className="mx-8">
+      <span className="neon-text">🌟 Trusted by Clinics & Patients</span>
+    </MarqueeItem>
+  </MarqueeContent>
+</Marquee>
+        </div>
     </section>
   );
 };

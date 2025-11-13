@@ -8,15 +8,20 @@ const Navigation: React.FC = () => {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
+      const headerOffset = 120; // Adjust this value for desired offset from top
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
       });
     }
     // Close mobile menu after clicking a link
     setIsMenuOpen(false);
   };
 
+  // ...existing code...
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };

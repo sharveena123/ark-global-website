@@ -1,9 +1,12 @@
 import React from 'react';
 import ExternalLinkButton from './animata/shining-button';
+import Navigation from './Navigation';
+
 
 const HeroSection: React.FC = () => {
   return (
     <div id="hero" className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 relative">
+      
       {/* Background Pattern - Enlarged and Full Coverage */}
       <div className="absolute inset-0 opacity-10 z-0">
         <div 
@@ -18,15 +21,15 @@ const HeroSection: React.FC = () => {
       </div>
       
       {/* Hero Content */}
-      <div className="container mx-auto px-4 md:px-8 py-8 md:py-16 relative z-10">
+<div className="container mx-auto px-4 md:px-8 pt-32 md:pt-40 pb-16 relative z-10">
         {/* U-Shaped Layout */}
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8">
           {/* Left Side Images - Hidden on mobile and tablet */}
           <div className="hidden lg:flex flex-col gap-8">
-            <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+            <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
               <img src="/images/pic1.png" alt="Laboratory samples" className="w-full h-full object-cover" />
             </div>
-            <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg ml-10">
+            <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg ml-10">
               <img src="/images/pic3.png" alt="Cryogenic storage" className="w-full h-full object-cover" />
             </div>
           </div>
@@ -43,19 +46,19 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Right Side Images - Hidden on mobile and tablet */}
-          <div className="hidden lg:flex flex-col gap-8">
-            <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
-              <img src="/images/pic2.png" alt="Cryogenic process" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
-              <img src="/images/pic5.png" alt="Sample container" className="w-full h-full object-cover" />
-            </div>
-          </div>
+  <div className="flex flex-col gap-8 items-end">
+  <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+    <img src="/images/pic2.png" alt="Cryogenic process" className="w-full h-full object-cover" />
+  </div>
+  <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg mr-10">
+    <img src="/images/pic5.png" alt="Sample container" className="w-full h-full object-cover" />
+  </div>
+</div>
         </div>
 
         {/* Bottom Center Image - Hidden on mobile and tablet */}
-        <div className="hidden lg:flex justify-center mt-8">
-          <div className="w-64 h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+<div className="hidden lg:flex justify-center mt-2 mb-4">
+          <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
             <img src="/images/pic4.png" alt="Laboratory work" className="w-full h-full object-cover" />
           </div>
         </div>

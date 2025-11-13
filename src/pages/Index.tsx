@@ -7,14 +7,16 @@ import Testimonials from "@/components/Testimonials";
 import VisitorCounter from "@/components/VisitorCounter";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsappButton";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
+      <WhatsAppButton />
       <Hero />
-      <Stats />
       <Services />
+      <Stats />
       <About />
       <Testimonials />
       <VisitorCounter />

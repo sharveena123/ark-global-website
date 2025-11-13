@@ -12,10 +12,10 @@ const Stats = () => {
   const sectionRef = useRef(null);
 
   const stats = [
-    { icon: Plane, label: "Successful Cryo Deliveries", value: 584, key: "deliveries" },
-    { icon: Thermometer, label: "Countries Served", value: 25, key: "countries" },
-    { icon: Users, label: "Satisfied Clients", value: 150, key: "clients" },
-    { icon: Clock, label: "Years of Experience", value: 8, key: "years" }
+    { icon: Plane, label: "Successful Cryo Deliveries", value: 900, key: "deliveries" },
+    { icon: Thermometer, label: "Countries Served", value: 16, key: "countries" },
+    { icon: Users, label: "Satisfied Clients", value: 899, key: "clients" },
+    { icon: Clock, label: "Years of Experience", value: 3, key: "years" }
   ];
 
   // Function to start the number animation
@@ -64,9 +64,18 @@ const Stats = () => {
   }, [hasAnimated]);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
+    <section ref={sectionRef} className="py-20 bg-gradient-subtle relative">
+      {/* Top Collage Image */}
+      <div className="w-full overflow-hidden">
+        <img 
+          src="images/collage1.png" 
+          alt="Collage 1" 
+          className="w-full h-auto object-cover"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 py-16 relative z-10">
+        <div className="text-center py-4 mb-16">
           <h2 className="font-poppins font-bold text-4xl lg:text-5xl text-foreground mb-4">
             Proven Track Record
           </h2>
@@ -111,6 +120,15 @@ const Stats = () => {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Bottom Collage Image */}
+      <div className="w-full overflow-hidden">
+        <img 
+          src="images/collage2.png" 
+          alt="Collage 2" 
+          className="w-full h-auto object-cover"
+        />
       </div>
     </section>
   );
