@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
@@ -35,36 +35,32 @@ const Navigation: React.FC = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-12 text-gray-700">
-          <a 
-            href="#hero" 
+          <button 
             onClick={(e) => handleSmoothScroll(e, 'hero')}
-            className="hover:text-blue-500 transition-colors"
+            className="hover:text-blue-500 transition-colors bg-transparent border-none cursor-pointer font-inherit text-inherit"
           >
             Home
-          </a>
-          <a 
-            href="#business" 
+          </button>
+          <button 
             onClick={(e) => handleSmoothScroll(e, 'business')}
-            className="hover:text-blue-500 transition-colors"
+            className="hover:text-blue-500 transition-colors bg-transparent border-none cursor-pointer font-inherit text-inherit"
           >
             Business
-          </a>
-          <a 
-            href="#company" 
+          </button>
+          <button 
             onClick={(e) => handleSmoothScroll(e, 'company')}
-            className="hover:text-blue-500 transition-colors"
+            className="hover:text-blue-500 transition-colors bg-transparent border-none cursor-pointer font-inherit text-inherit"
           >
             Corporate
-          </a>
-          <a 
-            href="#contact" 
+          </button>
+          <button 
             onClick={(e) => handleSmoothScroll(e, 'contact')}
-            className="hover:text-blue-500 transition-colors"
+            className="hover:text-blue-500 transition-colors bg-transparent border-none cursor-pointer font-inherit text-inherit"
           >
             Contact Us
-          </a>
+          </button>
         </div>
-
+        
         {/* Mobile Hamburger Button */}
         <button
           onClick={toggleMenu}
@@ -83,34 +79,30 @@ const Navigation: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-gray-200 z-40">
           <div className="flex flex-col py-4">
-            <a 
-              href="#hero" 
+            <button 
               onClick={(e) => handleSmoothScroll(e, 'hero')}
-              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors"
+              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left bg-transparent border-none cursor-pointer font-inherit w-full"
             >
               Home
-            </a>
-            <a 
-              href="#company" 
+            </button>
+            <button 
               onClick={(e) => handleSmoothScroll(e, 'company')}
-              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors"
+              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left bg-transparent border-none cursor-pointer font-inherit w-full"
             >
               Corporate
-            </a>
-            <a 
-              href="#business" 
+            </button>
+            <button 
               onClick={(e) => handleSmoothScroll(e, 'business')}
-              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors"
+              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left bg-transparent border-none cursor-pointer font-inherit w-full"
             >
               Business
-            </a>
-            <a 
-              href="#contact" 
+            </button>
+            <button 
               onClick={(e) => handleSmoothScroll(e, 'contact')}
-              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors"
+              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left bg-transparent border-none cursor-pointer font-inherit w-full"
             >
               Reach Us
-            </a>
+            </button>
           </div>
         </div>
       )}

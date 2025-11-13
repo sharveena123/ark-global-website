@@ -1,7 +1,23 @@
 import { Phone, Mail, MapPin, Linkedin, MessageSquare } from "lucide-react";
+import React from "react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 70;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <footer className="bg-foreground text-background">
@@ -23,11 +39,9 @@ const Footer = () => {
               IVF samples, embryos, and stem cells with complete cold chain integrity.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-smooth">
+              <a href="https://linkedin.com/in/ark-global-cryogenic-shipper-1721362a5"
+              className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-smooth">
                 <Linkedin className="w-5 h-5 text-primary" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-smooth">
-                <MessageSquare className="w-5 h-5 text-primary" />
               </a>
             </div>
           </div>
@@ -39,29 +53,19 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 font-inter text-background/80">
               <li>
-                <a href="#business" className="hover:text-primary transition-smooth">
                   IVF Cryo Shipping
-                </a>
               </li>
               <li>
-                <a href="#business" className="hover:text-primary transition-smooth">
                   Stem Cell Shipping
-                </a>
               </li>
               <li>
-                <a href="#business" className="hover:text-primary transition-smooth">
                   Cryogenic Solutions
-                </a>
               </li>
               <li>
-                <a href="#business" className="hover:text-primary transition-smooth">
                   Global Logistics
-                </a>
               </li>
               <li>
-                <a href="#business" className="hover:text-primary transition-smooth">
                   Delivery Solutions
-                </a>
               </li>
             </ul>
           </div>
@@ -73,35 +77,47 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 font-inter text-background/80">
               <li>
-                <a href="#company" className="hover:text-primary transition-smooth">
+                <button 
+                  onClick={(e) => handleSmoothScroll(e, 'company')}
+                  className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit text-left p-0"
+                >
                   About ARKGlobal
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#company" className="hover:text-primary transition-smooth">
+                <button 
+                  onClick={(e) => handleSmoothScroll(e, 'company')}
+                  className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit text-left p-0"
+                >
                   Certifications
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#company" className="hover:text-primary transition-smooth">
+                <button 
+                  onClick={(e) => handleSmoothScroll(e, 'company')}
+                  className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit text-left p-0"
+                >
                   Quality Assurance
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#contact" className="hover:text-primary transition-smooth">
+                <button 
+                  onClick={(e) => handleSmoothScroll(e, 'contact')}
+                  className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit text-left p-0"
+                >
                   Contact Us
-                </a>
+                </button>
               </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-smooth">
+              {/* <li>
+                <button className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit text-left p-0">
                   Terms & Conditions
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-smooth">
+                <button className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit text-left p-0">
                   Privacy Policy
-                </a>
-              </li>
+                </button>
+              </li> */}
             </ul>
           </div>
 
@@ -127,8 +143,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:info@arkglobalasia.com" className="hover:text-primary transition-smooth">
-                  info@arkglobalasia.com
+                <a href="mailto:arkglobalhandler@gmail.com" className="hover:text-primary transition-smooth">
+                  arkglobalhandler@gmail.com
                 </a>
               </div>
             </div>
@@ -141,17 +157,17 @@ const Footer = () => {
             <p className="font-inter text-sm text-background/60">
               Copyright © {currentYear} ARKGlobal. All rights reserved.
             </p>
-            <div className="flex gap-6 font-inter text-sm text-background/60">
-              <a href="#" className="hover:text-primary transition-smooth">
+            {/* <div className="flex gap-6 font-inter text-sm text-background/60">
+              <button className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit p-0">
                 Terms & Conditions
-              </a>
-              <a href="#" className="hover:text-primary transition-smooth">
+              </button>
+              <button className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit p-0">
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-primary transition-smooth">
+              </button>
+              <button className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit p-0">
                 IATA Compliance
-              </a>
-            </div>
+              </button>
+            </div> */}
           </div>
         </div>
       </div>

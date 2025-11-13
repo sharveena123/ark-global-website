@@ -84,24 +84,20 @@ const About = () => {
             </div>
             <div className="bg-secondary rounded-xl p-6">
               <h4 className="font-poppins font-semibold text-xl text-foreground mb-4">
-                Our Commitment
+                Our Compliance Standards
               </h4>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 font-inter">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  IATA standards & EU-Tissue Directive compliance
+                  IATA Compliant
                 </li>
                 <li className="flex items-center gap-3 font-inter">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  Personalized hand-carry door-to-door service
+                  EU Tissue Directive 2004/23/CE
                 </li>
                 <li className="flex items-center gap-3 font-inter">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  Highly trained onboard personnel
-                </li>
-                <li className="flex items-center gap-3 font-inter">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  Cold chain integrity maintenance
+                  EU Directives 2006/17/EC & 2006/86/EC
                 </li>
               </ul>
             </div>
