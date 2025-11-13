@@ -116,9 +116,9 @@ const About = () => {
               </p>
             </div>
 
-            {/* Orbit container */}
+              {/* Orbit container */}
             <div className="flex justify-center mb-20">
-              <div className="relative w-[350px] h-[350px] sm:w-[420px] sm:h-[420px] flex items-center justify-center">
+              <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[420px] lg:h-[420px] flex items-center justify-center">
                 {/* Radial gradient background */}
                 <div className="absolute w-full h-full rounded-full" style={{
                   background: 'radial-gradient(circle, rgba(0, 174, 238, 0.49) 0%, rgba(0, 173, 238, 0.05) 40%, transparent 70%)'
@@ -126,20 +126,20 @@ const About = () => {
                 {/* Outer and inner circles */}
                 <div className="absolute w-full h-full rounded-full border-2 border-primary/20"></div>
 
-        {/* Value icons around the orbit */}
+                {/* Value icons around the orbit */}
                 {coreValues.map((value, idx) => (
                   <div
                     key={idx}
-                    className={`absolute ${value.position} flex flex-col items-center text-center w-40`}
+                    className={`absolute ${value.position} flex flex-col items-center text-center w-32 sm:w-40`}
                   >
-                    <div className="bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-soft mb-2 hover:scale-110 transition-transform">
+                    <div className="bg-primary text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shadow-soft mb-2 hover:scale-110 transition-transform">
                       {value.icon}
                     </div>
-                    <p className="font-poppins font-semibold text-sm text-foreground">{value.title}</p>
+                    <p className="font-poppins font-semibold text-xs sm:text-sm text-foreground">{value.title}</p>
                   </div>
                 ))}
               </div>
-            </div>           
+            </div>
           </div>
         </div>
         <div className="bg-gradient-to-r from-blue-100 via-blue-200/30 to-blue-100 py-8">
