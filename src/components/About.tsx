@@ -142,9 +142,10 @@ const About = () => {
             </div>           
           </div>
         </div>
+        <div className="bg-gradient-to-r from-blue-100 via-blue-200/30 to-blue-100 py-8">
          <Marquee>
-  <MarqueeFade side="left" />
-  <MarqueeFade side="right" />
+  <MarqueeFade side="left" className="from-blue-100 to-transparent" />
+  <MarqueeFade side="right" className="from-blue-100 to-transparent" />
   <MarqueeContent>
     <MarqueeItem className="mx-8">
       <span className="neon-text">✅ IATA Approved</span>
@@ -172,6 +173,7 @@ const About = () => {
     </MarqueeItem>
   </MarqueeContent>
 </Marquee>
+</div>
         </div>
     </section>
   );
