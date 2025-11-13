@@ -158,7 +158,7 @@ const Services = () => {
           variants={container}
           className="mb-20"
         >
-          <div className="text-center mb-12">
+          <div className="text-center py-16 mb-12">
             <motion.h3 variants={fadeUp(0)} className="font-poppins font-bold text-3xl text-foreground mb-4">
               Why Choose ARKGlobal
             </motion.h3>

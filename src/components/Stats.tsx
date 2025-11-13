@@ -112,11 +112,9 @@ const Stats = () => {
         {/* Additional Info */}
         <div className="mt-16 text-center">
           <div className="bg-background/90 backdrop-blur-sm rounded-xl p-6 inline-block shadow-elegant border border-border/50">
-            <p className="font-inter text-foreground/80">
-              <span className="font-semibold text-primary">100% Success Rate</span> • 
-              <span className="mx-2">IATA Compliant</span> • 
-              <span className="mx-2">EU Tissue Directives Certified</span> • 
-              <span className="font-semibold text-primary">24/7 Monitoring</span>
+            <p className="font-inter text-foreground/80 gap-8">
+              <span className="font-semibold text-primary">• 100% Success Rate</span>   
+              <span className="font-semibold text-primary ml-8">  • 24/7 Monitoring</span>
             </p>
           </div>
         </div>
