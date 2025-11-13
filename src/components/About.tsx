@@ -19,7 +19,7 @@ import {
   MarqueeContent,
   MarqueeFade,
   MarqueeItem,
-} from '@/components/ui/Marquee';
+} from '@/components/ui/marquee';
 
 
 const About = () => {
@@ -123,6 +123,10 @@ const About = () => {
             {/* Orbit container */}
             <div className="flex justify-center mb-20">
               <div className="relative w-[350px] h-[350px] sm:w-[420px] sm:h-[420px] flex items-center justify-center">
+                {/* Radial gradient background */}
+                <div className="absolute w-full h-full rounded-full" style={{
+                  background: 'radial-gradient(circle, rgba(0, 174, 238, 0.49) 0%, rgba(0, 173, 238, 0.05) 40%, transparent 70%)'
+                }}></div>
                 {/* Outer and inner circles */}
                 <div className="absolute w-full h-full rounded-full border-2 border-primary/20"></div>
 
@@ -139,26 +143,7 @@ const About = () => {
                   </div>
                 ))}
               </div>
-            </div>
-
-            {/* Value descriptions */}
-            <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {coreValues.map((value, idx) => (
-                <Card key={idx} className="border-border shadow-soft hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="bg-primary/10 text-primary rounded-lg w-10 h-10 flex items-center justify-center">
-                        {value.icon}
-                      </div>
-                      <h4 className="font-poppins font-semibold text-xl text-foreground">
-                        {value.title}
-                      </h4>
-                    </div>
-                    <p className="font-inter text-muted-foreground">{value.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            </div>           
           </div>
         </div>
          <Marquee>

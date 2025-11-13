@@ -8,7 +8,7 @@ const Navigation: React.FC = () => {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
-      const headerOffset = 120; // Adjust this value for desired offset from top
+      const headerOffset = 120;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -17,17 +17,15 @@ const Navigation: React.FC = () => {
         behavior: 'smooth'
       });
     }
-    // Close mobile menu after clicking a link
     setIsMenuOpen(false);
   };
 
-  // ...existing code...
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <div className="sticky top-0 z-50 px-4 md:px-8 pt-4 md:pt-8 pb-4">
+    <div className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 pt-4 md:pt-8 pb-4">
       <nav className="flex items-center justify-between px-4 md:px-8 py-4 md:py-6 bg-blue-50/60 backdrop-blur-md rounded-full shadow-lg max-w-7xl mx-auto">
         {/* Logo */}
         <div className="text-2xl md:text-3xl font-bold">
@@ -45,13 +43,6 @@ const Navigation: React.FC = () => {
             Home
           </a>
           <a 
-            href="#company" 
-            onClick={(e) => handleSmoothScroll(e, 'company')}
-            className="hover:text-blue-500 transition-colors"
-          >
-            Corporate
-          </a>
-          <a 
             href="#business" 
             onClick={(e) => handleSmoothScroll(e, 'business')}
             className="hover:text-blue-500 transition-colors"
@@ -59,11 +50,18 @@ const Navigation: React.FC = () => {
             Business
           </a>
           <a 
+            href="#company" 
+            onClick={(e) => handleSmoothScroll(e, 'company')}
+            className="hover:text-blue-500 transition-colors"
+          >
+            Corporate
+          </a>
+          <a 
             href="#contact" 
             onClick={(e) => handleSmoothScroll(e, 'contact')}
             className="hover:text-blue-500 transition-colors"
           >
-            Reach Us
+            Contact Us
           </a>
         </div>
 
