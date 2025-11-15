@@ -76,7 +76,7 @@ const About = () => {
                 Our Mission
               </h3>
               <p className="font-inter text-lg text-muted-foreground mb-6">
-                To transport IVF samples and human reproductive cells for fertility clinics and individual IVF patients.
+                To provide safe, reliable transport of IVF samples and reproductive cells for fertility clinics and individual patients, both domestically and internationally.         
               </p>
               <p className="font-inter text-muted-foreground">
                 Over years of experience helps us contribute to your dream of starting a family by providing the highest level of shipping services. We understand the criticality of maintaining the optimal temperature for liquid nitrogen inside dry shipper dewars.

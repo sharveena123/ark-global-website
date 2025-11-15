@@ -3,7 +3,7 @@ import { FloatingWhatsApp } from "react-floating-whatsapp";
 const WhatsAppButton = () => {
   return (
     <FloatingWhatsApp
-      phoneNumber="60122196986" // your WhatsApp number in international format (no '+' or spaces)
+      phoneNumber="60122196896" // your WhatsApp number in international format (no '+' or spaces)
       accountName="ArkGlobal Support" // the name displayed in the chatbox header
       avatar="/ArkGlobalLogo.jpeg" // optional - can be your logo or profile image
       statusMessage="Typically replies within a day"

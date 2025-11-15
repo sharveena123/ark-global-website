@@ -33,6 +33,9 @@ const Footer = () => {
               <p className="font-inter text-sm text-background/80">
                 Your Trusted Cryo Shipper
               </p>
+              <p className="font-inter text-xs text-background/60 mt-1">
+                Reg No: CT0123202-W
+              </p>
             </div>
             <p className="font-inter text-background/80">
               Southeast Asia's leading specialist in cryogenic shipping for 

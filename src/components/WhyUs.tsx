@@ -17,27 +17,27 @@ const WhyUs = () => {
   });
 
   const features = [
-    {
-      icon: Truck,
-      title: "Carry-on Baggage Transportation",
-      description: "All samples are hand-carried door to door by trained onboard couriers for maximum safety.",
-    },
-    {
-      icon: Thermometer,
-      title: "Temperature Control",
-      description: "Each shipment is kept at optimal liquid nitrogen levels inside dry shipper dewars throughout transit.",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Compliance & Safety",
-      description: "All cryo deliveries meet IATA standards and EU-Tissue Directives for international transport.",
-    },
-    {
-      icon: CheckCheck,
-      title: "Trusted Experience",
-      description: "Years of proven success working with fertility clinics and IVF patients worldwide.",
-    }
-  ];
+  {
+    icon: Truck,
+    title: "Carry-on Baggage Transportation",
+    description: "All samples are hand-carried door to door by trained onboard couriers for maximum safety.",
+  },
+  {
+    icon: Thermometer,
+    title: "Real-time 5G Data Logger",
+    description: "State-of-the-art data logger enabling continuous, real-time tracking throughout the entire handling and transport process.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "MVE Dewars IATA/WHO Certified",
+    description: "Certified by IATA/WHO, ensuring full compliance with international airline and global health standards for secure cryogenic transport.",
+  },
+  {
+    icon: CheckCheck,
+    title: "Trusted Experience",
+    description: "Years of proven success working with fertility clinics and IVF patients worldwide.",
+  }
+];
 
   return (
     <section className="py-20 bg-gradient-light">

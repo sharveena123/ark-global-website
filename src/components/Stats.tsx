@@ -39,7 +39,7 @@ const Stats = () => {
   const stats = [
     { icon: Plane, label: "Successful Cryo Deliveries", value: 900, key: "deliveries" },
     { icon: Thermometer, label: "Countries Served", value: 16, key: "countries" },
-    { icon: Users, label: "Satisfied Clients", value: 899, key: "clients" },
+    { icon: Users, label: "Satisfied Clients", value: 100, key: "clients", isPercentage: true },
     { icon: Clock, label: "Years of Experience", value: 3, key: "years" },
   ];
 
@@ -169,6 +169,7 @@ const Stats = () => {
                     <div className="font-poppins font-bold text-5xl text-foreground">
                       {counters[stat.key]}
                       {stat.key === "deliveries" && "+"}
+                      {stat.isPercentage && "%"}
                     </div>
                     <p className="font-inter font-medium text-muted-foreground">{stat.label}</p>
                   </div>
