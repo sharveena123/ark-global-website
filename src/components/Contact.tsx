@@ -14,8 +14,7 @@ import {
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import WorkButton from "./animata/work-whatsapp-button";
-
-
+import FeedbackCard from "./FeedbackCard";
 
 const Contact = () => {
 
@@ -280,6 +279,8 @@ Thank you!`
                   </p>
                 </form>
               </CardContent>
+                                <FeedbackCard />
+
             </Card>
 
           {/* Contact Information */}

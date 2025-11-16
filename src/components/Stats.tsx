@@ -1,28 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Plane, Thermometer, Users, Clock, Eye, TrendingUp } from "lucide-react";
-import { initializeApp, getApps } from "firebase/app";
-import { getDatabase, ref, onValue, get, set, runTransaction } from "firebase/database";
-
-// Firebase config
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-};
-
-// Initialize Firebase only once
-let app;
-let db;
-if (!getApps().length) {
-  app = initializeApp(firebaseConfig);
-} else {
-  app = getApps()[0];
-}
-db = getDatabase(app);
+import { ref, onValue, get, set, runTransaction } from "firebase/database";
+import { realtimeDb } from "@/lib/firebase"; // Use shared config
 
 const Stats = () => {
   const [counters, setCounters] = useState({
@@ -45,9 +24,9 @@ const Stats = () => {
 
   // Firebase visitor tracking
   useEffect(() => {
-    const totalRef = ref(db, "visitors/total");
-    const todayRef = ref(db, "visitors/today");
-    const lastResetRef = ref(db, "visitors/lastReset");
+    const totalRef = ref(realtimeDb, "visitors/total");
+    const todayRef = ref(realtimeDb, "visitors/today");
+    const lastResetRef = ref(realtimeDb, "visitors/lastReset");
 
     const initializeVisitors = async () => {
       try {

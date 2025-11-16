@@ -1,5 +1,6 @@
 import { CheckCheck, ShieldCheck, Thermometer, Truck } from "lucide-react";
 import { easeOut, motion, Variants } from "framer-motion";
+import FeedbackDisplay from "./FeedbackDisplay";
 
 const WhyUs = () => {
   const container: Variants = {
@@ -99,6 +100,10 @@ const WhyUs = () => {
           </div>
         </motion.div>
       </div>
+              {/* Customer Reviews Section - Wide Card */}
+        <div className="mt-16">
+          <FeedbackDisplay showTitle={true} />
+        </div>
     </section>
   );
 };

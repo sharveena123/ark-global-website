@@ -1,15 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { 
-  Award, 
-  Shield, 
+import {  
   Users, 
-  Globe2,
-  CheckCircle,
-  FileCheck,
-  Thermometer,
-  HeartHandshake,
-  Heart,
   TrendingUp,
   ShieldCheck,
   Flame
