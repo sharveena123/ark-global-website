@@ -8,7 +8,6 @@ export default function AdminFeedback() {
 
   const fetchFeedback = async () => {
     try {
-      console.log("Fetching all feedback for admin...");
       const q = query(collection(db, "feedback"), orderBy("createdAt", "desc"));
       const querySnapshot = await getDocs(q);
       const allFeedbacks = querySnapshot.docs.map((doc) => ({ 
@@ -16,10 +15,8 @@ export default function AdminFeedback() {
         ...doc.data() 
       } as Feedback));
       
-      console.log("Admin feedback fetched:", allFeedbacks);
       setFeedbacks(allFeedbacks);
     } catch (error) {
-      console.error("Error fetching feedback:", error);
     }
   };
 
@@ -29,12 +26,9 @@ export default function AdminFeedback() {
 
   const togglePublish = async (id: string, current: boolean) => {
     try {
-      console.log(`Toggling publish status for ${id}: ${current} -> ${!current}`);
       await updateDoc(doc(db, "feedback", id), { published: !current });
-      console.log("Successfully updated publish status");
       fetchFeedback(); // Refresh the list
     } catch (error) {
-      console.error("Error updating publish status:", error);
     }
   };
 

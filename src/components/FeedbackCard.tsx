@@ -16,9 +16,7 @@ const FeedbackCard = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(""); // Clear previous errors
-    
-    console.log("Submitting feedback:", { rating, comment }); // Debug log
-    
+        
     if (rating === 0) {
       setError("Please provide a rating");
       return;
@@ -32,7 +30,6 @@ const FeedbackCard = () => {
     setIsSubmitting(true);
 
     try {
-      console.log("Firebase db object:", db); // Debug log
       
       const docRef = await addDoc(collection(db, "feedback"), {
         rating,
@@ -41,7 +38,6 @@ const FeedbackCard = () => {
         createdAt: serverTimestamp(),
       });
 
-      console.log("Document written with ID: ", docRef.id); // Debug log
       
       setSubmitted(true);
       setRating(0);
@@ -49,7 +45,6 @@ const FeedbackCard = () => {
 
       setTimeout(() => setSubmitted(false), 3000);
     } catch (err) {
-      console.error("Detailed error:", err); // Debug log
       setError("Failed to submit feedback. Please try again.");
     }
 

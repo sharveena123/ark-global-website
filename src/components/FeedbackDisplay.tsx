@@ -37,10 +37,8 @@ const FeedbackDisplay = ({ showTitle = true }: FeedbackDisplayProps) => {
           return b.createdAt.toDate() - a.createdAt.toDate();
         });
         
-        console.log(`📊 Fetched ${publishedFeedbacks.length} published feedback records`);
         setFeedbacks(publishedFeedbacks);
       } catch (error) {
-        console.error("Error fetching published feedback:", error);
       } finally {
         setLoading(false);
       }

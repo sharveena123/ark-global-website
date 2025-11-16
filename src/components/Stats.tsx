@@ -42,7 +42,6 @@ const Stats = () => {
         await runTransaction(totalRef, (currentValue) => (currentValue || 0) + 1);
         await runTransaction(todayRef, (currentValue) => (currentValue || 0) + 1);
       } catch (error) {
-        console.error("Error initializing visitors:", error);
       }
     };
 

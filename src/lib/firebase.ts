@@ -12,11 +12,9 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-console.log("Firebase config:", firebaseConfig); // Debug log
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 export const db = getFirestore(app);
 export const realtimeDb = getDatabase(app);
 
-console.log("Firebase initialized:", { app, db, realtimeDb }); // Debug log

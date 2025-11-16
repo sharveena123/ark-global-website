@@ -78,7 +78,6 @@ const Contact = () => {
           setShowPopup(true); // Show popup instead of alert
         },
         (error) => {
-          console.error("EmailJS Error:", error);
           alert("❌ Failed to send quote request. Please try again later.");
           setIsSending(false);
         }
