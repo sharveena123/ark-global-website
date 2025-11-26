@@ -14,6 +14,34 @@ import {
 
 const About = () => {
 
+  const IntCollaborators = [
+
+    { name: "Int1", src: "/international/americas.png" },
+    { name: "Int2", src: "/international/calicryo.png" },
+    { name: "Int3", src: "/international/cryos.png" },
+    { name: "Int4", src: "/international/morula.png" },
+    { name: "Int5", src: "/international/newlife.png" },
+    { name: "Int6", src: "/international/sgh.png" },
+    { name: "Int7", src: "/international/stluke.png" },
+    { name: "Int8", src: "/international/thomson.png" },
+    { name: "Int9", src: "/international/virtus.png" },
+    { name: "Int10", src: "/international/first.png" },
+  ];
+
+  const malaysiaCollaborators = [
+    { name: "My1", src: "/malaysia/kl.png" },
+    { name: "My2", src: "/malaysia/alpha.png" },
+    { name: "My3", src: "/malaysia/archukm.png" },
+    { name: "My4", src: "/malaysia/everlink.png" },
+    { name: "My5", src: "/malaysia/hospsarawak.png" },
+    { name: "My6", src: "/malaysia/kensington.png" },
+    { name: "My7", src: "/malaysia/alhaya.png" },
+    { name: "My8", src: "/malaysia/kpjdaman.png" },
+    { name: "My9", src: "/malaysia/metro.png" },
+    { name: "My10", src: "/malaysia/sabahcare.png" },
+    { name: "My11", src: "/malaysia/sunfert.png" },
+    { name: "My12", src: "/malaysia/tmc.png" },
+  ];
   const coreValues = [
   {
     title: "Passion",
@@ -132,38 +160,72 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="bg-gradient-to-r from-blue-100 via-blue-200/30 to-blue-100 py-8">
-         <Marquee>
-  <MarqueeFade side="left" className="from-blue-100 to-transparent" />
-  <MarqueeFade side="right" className="from-blue-100 to-transparent" />
-  <MarqueeContent>
-    <MarqueeItem className="mx-8">
-      <span className="neon-text">✅ IATA Approved</span>
-    </MarqueeItem>
-    <MarqueeItem className="mx-8">
-      <span className="neon-text">❄️ Cryogenic Experts</span>
-    </MarqueeItem>
-    <MarqueeItem className="mx-8">
-      <span className="neon-text">🧬 EU Tissue Compliant</span>
-    </MarqueeItem>
-    <MarqueeItem className="mx-8">
-      <span className="neon-text">💎 Quality Assured</span>
-    </MarqueeItem>
-    <MarqueeItem className="mx-8">
-      <span className="neon-text">🌐 Global Safe Delivery</span>
-    </MarqueeItem>
-    <MarqueeItem className="mx-8">
-      <span className="neon-text">🛡️ Zero Damage Incidents</span>
-    </MarqueeItem>
-    <MarqueeItem className="mx-8">
-      <span className="neon-text">📦 Cold Chain Certified</span>
-    </MarqueeItem>
-    <MarqueeItem className="mx-8">
-      <span className="neon-text">🌟 Trusted by Clinics & Patients</span>
-    </MarqueeItem>
-  </MarqueeContent>
-</Marquee>
-</div>
+        {/* International Partners - Sliding Left */}
+            <div className="text-center mb-6">
+              <h3 className="font-poppins font-light text-md text-foreground mb-2">
+                 International Partners
+              </h3>
+            </div>
+            
+            <Marquee>
+              <MarqueeFade side="left" />
+              <MarqueeFade side="right" />
+              <MarqueeContent direction="left" speed={40}>
+                {IntCollaborators.map((partner, index) => (
+                  <MarqueeItem key={index} className="mx-4 lg:mx-6">
+                    <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 w-32 h-20 lg:w-40 lg:h-24 flex items-center justify-center">
+                      <img
+                        src={partner.src}
+                        alt={partner.name}
+                        className="max-w-full max-h-full object-contain hover:grayscale-0 transition-all duration-300"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          target.parentElement!.innerHTML = `
+                            <div class="text-center text-xs text-gray-500 font-medium px-2">
+                              ${partner.name}
+                            </div>
+                          `;
+                        }}
+                      />
+                    </div>
+                  </MarqueeItem>
+                ))}
+              </MarqueeContent>
+            </Marquee>
+          </div>
+          {/* Malaysian Partners - Sliding Right */}
+            <div className="text-center mt-12 mb-6">
+              <h3 className="font-poppins font-light text-md text-foreground mb-2">
+                 Malaysian Partners
+              </h3>
+            
+            <Marquee>
+              <MarqueeFade side="left" />
+              <MarqueeFade side="right" />
+              <MarqueeContent direction="right" speed={35}>
+                {malaysiaCollaborators.map((partner, index) => (
+                  <MarqueeItem key={index} className="mx-4 lg:mx-6">
+                    <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 w-32 h-20 lg:w-40 lg:h-24 flex items-center justify-center">
+                      <img
+                        src={partner.src}
+                        alt={partner.name}
+                        className="max-w-full max-h-full object-contain hover:grayscale-0 transition-all duration-300"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          target.parentElement!.innerHTML = `
+                            <div class="text-center text-xs text-gray-500 font-medium px-2">
+                              ${partner.name}
+                            </div>
+                          `;
+                        }}
+                      />
+                    </div>
+                  </MarqueeItem>
+                ))}
+              </MarqueeContent>
+            </Marquee>
         </div>
     </section>
   );

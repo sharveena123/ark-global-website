@@ -17,7 +17,7 @@ const Stats = () => {
 
   const stats = [
     { icon: Plane, label: "Successful Cryo Deliveries", value: 900, key: "deliveries" },
-    { icon: Thermometer, label: "Countries Served", value: 16, key: "countries" },
+    { icon: Thermometer, label: "Countries Served", value: 17, key: "countries" },
     { icon: Users, label: "Satisfied Clients", value: 100, key: "clients", isPercentage: true },
     { icon: Clock, label: "Years of Experience", value: 3, key: "years" },
   ];
