@@ -35,10 +35,12 @@ const HeroSection: React.FC = () => {
 
           {/* Center Content */}
           <div className="flex-1 px-4 py-12 md:px-8 lg:px-16 text-center flex flex-col justify-center items-center min-h-[400px] lg:min-h-[600px]">
-            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl text-gray-800 mb-6 md:mb-8 leading-tight">
+            <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-3xl text-gray-800 font-bold mb-4 leading-tight">
               Your trusted cyro shipper for<br className="hidden sm:block" />
               <span className="sm:hidden"> </span>assisted reproduction
             </h1>
+            <p className="text-base font-semibold italic md:text-lg text-blue-800 max-w-2xl mx-auto mb-8 leading-relaxed">
+MOF-registered and fully compliant with international cryogenic logistics standards.</p>
             <div>
               <ExternalLinkButton />
             </div>

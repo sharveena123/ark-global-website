@@ -94,31 +94,43 @@ const About = () => {
                 Our Mission
               </h3>
               <p className="font-inter text-lg text-muted-foreground mb-6">
-                To provide safe, reliable transport of IVF samples and reproductive cells for fertility clinics and individual patients, both domestically and internationally.         
-              </p>
+  To provide safe, reliable transport of IVF samples and reproductive cells for fertility clinics and individual patients, both domestically and internationally.
+</p>
               <p className="font-inter text-muted-foreground">
                 Over years of experience helps us contribute to your dream of starting a family by providing the highest level of shipping services. We understand the criticality of maintaining the optimal temperature for liquid nitrogen inside dry shipper dewars.
               </p>
             </div>
             <div className="bg-secondary rounded-xl p-6">
               <h4 className="font-poppins font-semibold text-xl text-foreground mb-4">
-                Our Compliance Standards
-              </h4>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 font-inter">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  IATA Compliant
-                </li>
-                <li className="flex items-center gap-3 font-inter">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  EU Tissue Directive 2004/23/CE
-                </li>
-                <li className="flex items-center gap-3 font-inter">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  EU Directives 2006/17/EC & 2006/86/EC
-                </li>
-              </ul>
-            </div>
+    Our Compliance Standards
+  </h4>
+    <ul className="space-y-3">
+    <li className="flex items-center gap-3 font-inter">
+      <div className="w-2 h-2 bg-primary rounded-full"></div>
+      Ministry of Finance (MOF), Malaysia Registered
+    </li>
+    <li className="flex items-center gap-3 font-inter">
+      <div className="w-2 h-2 bg-primary rounded-full"></div>
+      IATA Compliant
+    </li>
+    <li className="flex items-center gap-3 font-inter">
+      <div className="w-2 h-2 bg-primary rounded-full"></div>
+      Import & Export Permit Management
+    </li>
+    <li className="flex items-center gap-3 font-inter">
+      <div className="w-2 h-2 bg-primary rounded-full"></div>
+      Customs Clearance & Regulatory Compliance
+    </li>
+    <li className="flex items-center gap-3 font-inter">
+      <div className="w-2 h-2 bg-primary rounded-full"></div>
+      EU Tissue Directive 2004/23/CE
+    </li>
+    <li className="flex items-center gap-3 font-inter">
+      <div className="w-2 h-2 bg-primary rounded-full"></div>
+      EU Directives 2006/17/EC & 2006/86/EC
+    </li>
+  </ul>
+</div>
           </div>
         </div>
                

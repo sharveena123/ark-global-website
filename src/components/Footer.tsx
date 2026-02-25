@@ -154,6 +154,28 @@ const Footer = () => {
           </div>
         </div>
 
+{/* Compliance & Regulatory Strip */}
+<div className="py-8 border-t border-background/10">
+  <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-center">
+    
+    <div className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-lg">
+      <p className="font-inter text-sm font-semibold text-primary">
+        MOF Registered Company
+      </p>
+      <p className="font-inter text-xs text-background/60">
+        Ministry of Finance, Malaysia
+      </p>
+    </div>
+
+    <div className="hidden md:block w-px h-8 bg-background/20"></div>
+
+    <p className="font-inter text-sm text-background/70">
+      Specialised Cryogenic Transport • Import & Export Permit Management • Customs Clearance & Regulatory Compliance
+    </p>
+
+  </div>
+</div>
+
         {/* Bottom Footer */}
         <div className="py-8 border-t border-background/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
