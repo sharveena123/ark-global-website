@@ -132,8 +132,8 @@ Thank you!`
     {
       icon: Mail,
       title: "Email",
-      value: "arkglobalhandler@gmail.com", 
-      link: "mailto:arkglobalhandler@gmail.com",
+      value: "operations@arkglobalasia.com", 
+      link: "mailto:operations@arkglobalasia.com",
       description: "For quotes and general inquiries"
     },
     {

@@ -239,7 +239,7 @@ This is a private project. For internal development:
 
 For technical support or questions:
 
-- Email: arkglobalhandler@gmail.com
+- Email: operations@arkglobalasia.com
 - Phone: +60 12-219 6896
 - WhatsApp: Available through website widget
 
