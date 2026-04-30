@@ -26,6 +26,8 @@ const About = () => {
     { name: "Int8", src: "/international/thomson.png" },
     { name: "Int9", src: "/international/virtus.png" },
     { name: "Int10", src: "/international/first.png" },
+    { name: "Int11", src: "/international/alpha.png" },
+    { name: "Int12", src: "/international/sincere.png" },
   ];
 
   const malaysiaCollaborators = [
@@ -41,6 +43,8 @@ const About = () => {
     { name: "My10", src: "/malaysia/sabahcare.png" },
     { name: "My11", src: "/malaysia/sunfert.png" },
     { name: "My12", src: "/malaysia/tmc.png" },
+    { name: "My13", src: "/malaysia/hta.png" },
+    { name: "My14", src: "/malaysia/umfertility.png" },
   ];
   const coreValues = [
   {
