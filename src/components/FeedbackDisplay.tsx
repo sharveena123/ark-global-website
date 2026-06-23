@@ -1,7 +1,9 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { db } from "@/lib/firebase";
+import { db, isFirebaseInitialized } from "@/lib/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { Feedback } from "@/lib/types";
 import { Star, Quote, ChevronRight, ChevronLeft } from "lucide-react";
@@ -17,6 +19,12 @@ const FeedbackDisplay = ({ showTitle = true }: FeedbackDisplayProps) => {
   const itemsPerPage = 3;
 
   useEffect(() => {
+    // Skip Firebase operations if not initialized
+    if (!isFirebaseInitialized || !db) {
+      setLoading(false);
+      return;
+    }
+
     const fetchPublishedFeedback = async () => {
       try {
         // Fetch ALL published feedback without limit

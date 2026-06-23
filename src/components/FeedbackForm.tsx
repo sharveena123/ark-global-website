@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, FormEvent } from "react";
-import { db } from "@/lib/firebase";
+import { db, isFirebaseInitialized } from "@/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function FeedbackForm() {
@@ -9,6 +11,13 @@ export default function FeedbackForm() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    
+    // Skip if Firebase not initialized
+    if (!isFirebaseInitialized || !db) {
+      alert("Please configure Firebase to submit feedback.");
+      return;
+    }
+
     if (rating === 0) return alert("Please select a rating.");
 
     await addDoc(collection(db, "feedback"), {

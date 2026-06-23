@@ -1,9 +1,11 @@
+"use client";
+
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle } from "lucide-react";
-import { db } from "@/lib/firebase";
+import { db, isFirebaseInitialized } from "@/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const FeedbackCard = () => {
@@ -16,6 +18,12 @@ const FeedbackCard = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(""); // Clear previous errors
+    
+    // Skip if Firebase not initialized
+    if (!isFirebaseInitialized || !db) {
+      setError("Please configure Firebase to submit feedback.");
+      return;
+    }
         
     if (rating === 0) {
       setError("Please provide a rating");

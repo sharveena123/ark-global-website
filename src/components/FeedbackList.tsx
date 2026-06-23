@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { db } from "@/lib/firebase";
+import { db, isFirebaseInitialized } from "@/lib/firebase";
 import { collection, query, where, getDocs, orderBy } from "firebase/firestore";
 import { Feedback } from "@/lib/types";
 
@@ -7,6 +9,11 @@ export default function FeedbackList() {
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
 
   useEffect(() => {
+    // Skip Firebase operations if not initialized
+    if (!isFirebaseInitialized || !db) {
+      return;
+    }
+
     const fetchPublished = async () => {
       const q = query(
         collection(db, "feedback"),

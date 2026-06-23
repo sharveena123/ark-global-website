@@ -1,7 +1,9 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { Plane, Thermometer, Users, Clock, Eye, TrendingUp } from "lucide-react";
 import { ref, onValue, get, set, runTransaction } from "firebase/database";
-import { realtimeDb } from "@/lib/firebase"; // Use shared config
+import { realtimeDb, isFirebaseInitialized } from "@/lib/firebase"; // Use shared config
 
 const Stats = () => {
   const [counters, setCounters] = useState({
@@ -24,6 +26,11 @@ const Stats = () => {
 
   // Firebase visitor tracking
   useEffect(() => {
+    // Skip Firebase operations if not initialized
+    if (!isFirebaseInitialized || !realtimeDb) {
+      return;
+    }
+
     const totalRef = ref(realtimeDb, "visitors/total");
     const todayRef = ref(realtimeDb, "visitors/today");
     const lastResetRef = ref(realtimeDb, "visitors/lastReset");

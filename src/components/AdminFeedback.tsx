@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { db } from "@/lib/firebase";
+import { db, isFirebaseInitialized } from "@/lib/firebase";
 import { collection, getDocs, updateDoc, doc, query, orderBy } from "firebase/firestore";
 import { Feedback } from "@/lib/types";
 
@@ -7,6 +9,11 @@ export default function AdminFeedback() {
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
 
   const fetchFeedback = async () => {
+    // Skip if Firebase not initialized
+    if (!isFirebaseInitialized || !db) {
+      return;
+    }
+
     try {
       const q = query(collection(db, "feedback"), orderBy("createdAt", "desc"));
       const querySnapshot = await getDocs(q);
@@ -25,6 +32,11 @@ export default function AdminFeedback() {
   }, []);
 
   const togglePublish = async (id: string, current: boolean) => {
+    // Skip if Firebase not initialized
+    if (!isFirebaseInitialized || !db) {
+      return;
+    }
+
     try {
       await updateDoc(doc(db, "feedback", id), { published: !current });
       fetchFeedback(); // Refresh the list
