@@ -8,54 +8,28 @@ const Services = () => {
   const services = [
     {
       icon: Baby,
-      title: "Frozen Eggs Transportation",
-      features: [
-        "Cryogenic safe",
-        "IATA & EU compliant",
-        "Hand-carried by trained couriers",
-        "Flexible pickup & delivery",
-      ],
+      title: "IVF Cryo Shipping",
+      description: "Safe transport of frozen eggs, embryos & sperm with complete cold-chain protection"
     },
-    
     {
       icon: Package,
-      title: "Sperm Samples Transportation",
-      features: [
-        "Liquid nitrogen dewars",
-        "Stable & contamination-free",
-        "Confidential handling",
-        "Fast global delivery",
-      ],
+      title: "Embryo Transport",
+      description: "Specialized handling of precious embryos with continuous monitoring throughout"
     },
     {
       icon: Microscope,
-      title: "Frozen Embryos Transportation",
-      features: [
-        "Specialized dry shippers",
-        "Continuous temp monitoring",
-        "Secure door-to-door delivery",
-        "International standard compliance",
-      ],
+      title: "Stem Cell Logistics",
+      description: "Advanced preservation methods for sensitive biological samples"
     },
     {
       icon: Globe,
-      title: "Stem Cell Shipping",
-      features: [
-        "Advanced preservation methods",
-        "Certified long-distance transport",
-        "Expert biological handlers",
-        "Trusted by clinics & labs",
-      ],
+      title: "Global Courier Service",
+      description: "Worldwide delivery with hand-carried, door-to-door protection"
     },
     {
       icon: Plane,
-      title: "Import & Export Permits",
-      features: [
-        "Inbound & outbound support",
-        "Permit handlings",
-        "Documentation support",
-        "Regulatory coordination",
-      ],
+      title: "Regulatory Support",
+      description: "Complete permit handling and international compliance coordination"
     },
   ];
 
@@ -76,27 +50,19 @@ const Services = () => {
 
   const CardComponent = ({ service }: { service: typeof services[0] }) => (
     <motion.div variants={fadeUp(0)}>
-      <Card className="border-border hover:shadow-soft transition-smooth bg-gradient-light">
+      <Card className="border-border hover:shadow-soft transition-smooth bg-gradient-light h-full">
         <CardHeader className="text-center">
           <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
             <service.icon className="w-8 h-8 text-primary" />
           </div>
-          <CardTitle className="font-poppins font-semibold text-xl text-foreground">
+          <CardTitle className="font-poppins font-semibold text-lg text-foreground">
             {service.title}
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="space-y-2">
-            {service.features.map((feature, idx) => (
-              <li
-                key={idx}
-                className="flex items-center gap-2 font-inter text-sm"
-              >
-                <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                {feature}
-              </li>
-            ))}
-          </ul>
+          <p className="font-inter text-sm text-muted-foreground leading-relaxed">
+            {service.description}
+          </p>
         </CardContent>
       </Card>
     </motion.div>
@@ -117,15 +83,14 @@ const Services = () => {
             variants={fadeUp(0)}
             className="font-poppins font-bold text-4xl lg:text-5xl text-foreground mb-6"
           >
-            Comprehensive Cryo{" "}
-            <span className="text-primary">Shipping Services</span>
+            Trusted with your most <span className="text-primary">delicate journey</span>
           </motion.h2>
           <motion.p
             variants={fadeUp(0.1)}
-            className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto"
+            className="font-inter text-lg text-muted-foreground max-w-3xl mx-auto"
           >
-            From IVF samples to stem cells, we provide end-to-end cryogenic
-            transport solutions with uncompromising safety and reliability.
+We understand that each shipment represents hopes, dreams, and precious moments. That's why every sample is handled with the utmost care and professionalism.
+
           </motion.p>
         </motion.div>
 
@@ -135,11 +100,37 @@ const Services = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={container}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-20"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-16"
         >
           {services.map((service, index) => (
             <CardComponent key={index} service={service} />
           ))}
+        </motion.div>
+
+        {/* CTA Button */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={container}
+          className="text-center"
+        >
+          <motion.button
+            variants={fadeUp(0.1)}
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById('contact');
+              if (element) {
+                const headerOffset = 60;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+              }
+            }}
+            className="px-8 py-4 font-bold text-white bg-blue-800 rounded-full hover:bg-blue-900 transition-colors"
+          >
+            Request a Quote
+          </motion.button>
         </motion.div>
       </div>
     </section>

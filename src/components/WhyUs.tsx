@@ -20,23 +20,23 @@ const WhyUs = () => {
   const features = [
   {
     icon: Truck,
-    title: "Carry-on Baggage Transportation",
-    description: "All samples are hand-carried door to door by trained onboard couriers for maximum safety.",
+    title: "100% Cold-Chain Integrity",
+    description: "Hand-carried door to door by trained couriers—your samples never sit in warehouses.",
   },
   {
     icon: Thermometer,
-    title: "Real-time 5G Data Logger",
-    description: "State-of-the-art data logger enabling continuous, real-time tracking throughout the entire handling and transport process.",
+    title: "Real-Time Tracking",
+    description: "Know exactly where your precious samples are at every moment of their journey.",
   },
   {
     icon: ShieldCheck,
-    title: "MVE Dewars IATA/WHO Certified",
-    description: "Certified by IATA/WHO, ensuring full compliance with international airline and global health standards for secure cryogenic transport.",
+    title: "Fully Compliant",
+    description: "IATA/WHO certified equipment ensuring international standards are exceeded, not just met.",
   },
   {
     icon: CheckCheck,
-    title: "Trusted Experience",
-    description: "Years of proven success working with fertility clinics and IVF patients worldwide.",
+    title: "Trusted by Clinics Worldwide",
+    description: "Years of proven success with leading fertility clinics and research institutions.",
   }
 ];
 
@@ -58,24 +58,23 @@ const WhyUs = () => {
               </span>
             </div>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl text-foreground mb-6">
-              Trusted Cryo-Shipping Solutions
+              Complete peace of mind from start to finish
             </h2>
-            <p className="font-inter text-xl text-muted-foreground mb-8">
-              Industry-leading expertise in cryogenic shipping with proven reliability, 
-              compliance, and care for your most critical shipments.
+            <p className="font-inter text-lg text-muted-foreground mb-8">
+              We don't just ship samples. We care for them like they matter, because we know they do.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="font-inter text-muted-foreground">100% Success Rate</span>
+                <span className="font-inter text-muted-foreground">Hand-carried every step</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="font-inter text-muted-foreground">IATA Certified</span>
+                <span className="font-inter text-muted-foreground">Real-time tracking & updates</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="font-inter text-muted-foreground">24/7 Support</span>
+                <span className="font-inter text-muted-foreground">24/7 dedicated support</span>
               </div>
             </div>
           </motion.div>

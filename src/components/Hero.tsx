@@ -1,5 +1,4 @@
 import React from 'react';
-import ExternalLinkButton from './animata/shining-button';
 
 
 const HeroSection: React.FC = () => {
@@ -35,14 +34,45 @@ const HeroSection: React.FC = () => {
 
           {/* Center Content */}
           <div className="flex-1 px-4 py-12 md:px-8 lg:px-16 text-center flex flex-col justify-center items-center min-h-[400px] lg:min-h-[600px]">
-            <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-3xl text-gray-800 font-bold mb-4 leading-tight">
-              Your trusted cyro shipper for<br className="hidden sm:block" />
-              <span className="sm:hidden"> </span>assisted reproduction
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-gray-800 font-bold mb-6 leading-tight">
+              Safe, trusted transport of IVF samples & embryos worldwide
             </h1>
-            <p className="text-base font-semibold italic md:text-lg text-blue-800 max-w-2xl mx-auto mb-8 leading-relaxed">
-MOF-registered and fully compliant with international cryogenic logistics standards.</p>
-            <div>
-              <ExternalLinkButton />
+            <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-10 leading-relaxed">
+              Handled with precision, care, and complete cold-chain protection. Your fertility journey matters to us.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    const headerOffset = 60;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                  }
+                }}
+                className="group cursor-pointer rounded-full border-4 border-blue-800 border-opacity-0 bg-transparent p-1 transition-all duration-500 hover:border-opacity-100"
+              >
+                <div className="flex items-center justify-center gap-2 rounded-full bg-blue-800 px-8 py-4 font-bold text-white hover:bg-blue-900 transition-colors">
+                  Get a Quote in 24 Hours
+                </div>
+              </button>
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    const headerOffset = 60;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                  }
+                }}
+                className="px-8 py-4 font-bold text-blue-800 border-2 border-blue-800 rounded-full hover:bg-blue-50 transition-colors"
+              >
+                Talk to a Specialist
+              </button>
             </div>
           </div>
 
@@ -58,8 +88,8 @@ MOF-registered and fully compliant with international cryogenic logistics standa
         </div>
 
         {/* Bottom Center Image - Hidden on mobile and tablet */}
-        <div className="hidden lg:flex justify-center -mt-40">
-          <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+        <div className="hidden lg:flex justify-center -mt-43">
+          <div className="w-52 h-48 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
             <img src="/images/pic4.png" alt="Laboratory work" className="w-full h-full object-cover" />
           </div>
         </div>

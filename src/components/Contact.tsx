@@ -154,11 +154,11 @@ Thank you!`
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-poppins font-bold text-4xl lg:text-5xl text-foreground mb-6">
-            Get in Touch with <span className="text-primary">ARKGlobal</span>
+            Let's discuss your <span className="text-primary">fertility journey</span>
           </h2>
           <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to discuss your cryogenic shipping needs? Our expert team is here to 
-            provide personalized solutions for your specific requirements.
+            Our specialists are here to answer all your questions and provide a personalized quote within 24 hours. 
+            You're not alone in this—we're here to help.
           </p>
         </div>
 
