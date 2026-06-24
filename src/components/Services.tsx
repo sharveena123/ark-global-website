@@ -85,9 +85,17 @@ const Services = () => {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="font-inter text-sm text-muted-foreground leading-relaxed">
-            {service.description}
-          </p>
+          <ul className="space-y-2">
+            {service.features.map((feature, idx) => (
+              <li
+                key={idx}
+                className="flex items-center gap-2 font-inter text-sm text-muted-foreground"
+              >
+                <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
+                {feature}
+              </li>
+            ))}
+          </ul>
         </CardContent>
       </Card>
     </motion.div>
