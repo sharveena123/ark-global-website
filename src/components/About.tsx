@@ -50,28 +50,28 @@ const About = () => {
   {
     title: "Passion",
     description:
-      "Driven to advance supply chain solutions for the life sciences industry while never losing sight of our value to humanity.",
+      "We are driven by a deep belief that every family deserves the chance to grow. That purpose guides every shipment we carry.",
     icon: <Flame className="w-6 h-6" />,
     position: "top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
   },
   {
     title: "Integrity",
     description:
-      "We operate with honesty, truthfulness and transparency in accordance to the highest ethical and corporate governance standards.",
+      "Honesty and transparency are non-negotiable — especially when patients are trusting us with something irreplaceable.",
     icon: <ShieldCheck className="w-6 h-6" />,
     position: "right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2",
   },
   {
     title: "Teamwork",
     description:
-      "We get things done through commitment, collaboration, and mutual respect. None of us is as smart as all of us.",
+      "We work closely with clinics, patients, and partners — because protecting hope is never a solo effort.",
     icon: <Users className="w-6 h-6" />,
     position: "bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2",
   },
   {
-    title: "Value Creation",
+    title: "Care",
     description:
-      "We strive to build value for all stakeholders through client-centric focus and exceeding competitive benchmarks.",
+      "We go beyond logistics. Every decision we make is guided by what is safest and most compassionate for the people behind each sample.",
     icon: <TrendingUp className="w-6 h-6" />,
     position: "left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2",
   },
@@ -85,8 +85,11 @@ const About = () => {
             We Are <span className="text-primary">ARKGlobal</span>
           </h2>
           <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
-            ARKGlobal is a Southeast Asia company that specializes in cryo shipping for assisted reproduction. 
-            Our core focus is primarily transporting IVF samples and human reproductive cells for fertility clinics and individual IVF patients around the globe.
+            We are a Southeast Asia specialist in cryogenic shipping for assisted
+            reproduction — and we understand that behind every sample is a deeply
+            personal story. Whether you are a fertility clinic or an individual on
+            your path to parenthood, we carry your hope with the responsibility it
+            deserves.
           </p>
         </div>
 
@@ -98,10 +101,15 @@ const About = () => {
                 Our Mission
               </h3>
               <p className="font-inter text-lg text-muted-foreground mb-6">
-  To provide safe, reliable transport of IVF samples and reproductive cells for fertility clinics and individual patients, both domestically and internationally.
-</p>
+                To provide safe, compassionate transport of IVF samples and reproductive
+                cells — supporting fertility journeys worldwide with unwavering care
+                and scientific precision.
+              </p>
               <p className="font-inter text-muted-foreground">
-                Over years of experience helps us contribute to your dream of starting a family by providing the highest level of shipping services. We understand the criticality of maintaining the optimal temperature for liquid nitrogen inside dry shipper dewars.
+                We know that starting or growing a family is one of life&apos;s most
+                meaningful chapters. That is why we treat every shipment as sacred —
+                maintaining the optimal cryogenic conditions your samples need, while
+                guiding you through the process with warmth and clarity at every step.
               </p>
             </div>
             <div className="bg-secondary rounded-xl p-6">
@@ -146,7 +154,7 @@ const About = () => {
                 Our <span className="text-primary">Core Values</span>
               </h2>
               <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
-                The principles that guide everything we do
+                The values that guide how we care for every shipment — and every family
               </p>
             </div>
 

@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'poppins': ['Poppins', 'sans-serif'],
-				'inter': ['Inter', 'sans-serif'],
+				'poppins': ['var(--font-poppins)', 'Poppins', 'sans-serif'],
+				'inter': ['var(--font-inter)', 'Inter', 'sans-serif'],
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',

@@ -1,23 +1,11 @@
-import { Phone, Mail, MapPin, Linkedin, MessageSquare } from "lucide-react";
+"use client";
+
+import { Phone, Mail, MapPin, Linkedin } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      const headerOffset = 70;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <footer className="bg-foreground text-background">
@@ -31,15 +19,16 @@ const Footer = () => {
                 ARK<span className="text-primary">Global</span>
               </h3>
               <p className="font-inter text-sm text-background/80">
-                Your Trusted Cryo Shipper
+                Safely carrying hope across borders.
               </p>
               <p className="font-inter text-xs text-background/60 mt-1">
                 Reg No: CT0123202-W
               </p>
             </div>
             <p className="font-inter text-background/80">
-              Southeast Asia's leading specialist in cryogenic shipping for 
-              IVF samples, embryos, and stem cells with complete cold chain integrity.
+              Southeast Asia&apos;s trusted specialist in cryogenic shipping for IVF
+              samples, embryos, and reproductive cells — where precision meets
+              compassion on every journey.
             </p>
             <div className="flex gap-4">
               <a href="https://linkedin.com/in/ark-global-cryogenic-shipper-1721362a5"
@@ -80,47 +69,35 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 font-inter text-background/80">
               <li>
-                <button 
-                  onClick={(e) => handleSmoothScroll(e, 'company')}
-                  className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit text-left p-0"
-                >
+                <Link href="/blog" className="hover:text-primary transition-smooth">
+                  Blog &amp; Guides
+                </Link>
+              </li>
+              <li>
+                <Link href="/ivf-transport" className="hover:text-primary transition-smooth">
+                  IVF Transport
+                </Link>
+              </li>
+              <li>
+                <Link href="/embryo-shipping" className="hover:text-primary transition-smooth">
+                  Embryo Shipping
+                </Link>
+              </li>
+              <li>
+                <Link href="/cryo-shipping" className="hover:text-primary transition-smooth">
+                  Cryo Shipping
+                </Link>
+              </li>
+              <li>
+                <a href="/#company" className="hover:text-primary transition-smooth">
                   About ARKGlobal
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={(e) => handleSmoothScroll(e, 'company')}
-                  className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit text-left p-0"
-                >
-                  Certifications
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={(e) => handleSmoothScroll(e, 'company')}
-                  className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit text-left p-0"
-                >
-                  Quality Assurance
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={(e) => handleSmoothScroll(e, 'contact')}
-                  className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit text-left p-0"
-                >
+                <a href="/#contact" className="hover:text-primary transition-smooth">
                   Contact Us
-                </button>
+                </a>
               </li>
-              {/* <li>
-                <button className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit text-left p-0">
-                  Terms & Conditions
-                </button>
-              </li>
-              <li>
-                <button className="hover:text-primary transition-smooth bg-transparent border-none cursor-pointer font-inherit text-inherit text-left p-0">
-                  Privacy Policy
-                </button>
-              </li> */}
             </ul>
           </div>
 

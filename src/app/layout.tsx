@@ -1,45 +1,42 @@
 import type { Metadata, Viewport } from "next";
+import { Poppins, Inter } from "next/font/google";
 import "@/index.css";
 import { RootLayoutClient } from "./layout-client";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "ARKGlobal - Your Trusted Cryo Shipper | IVF & Stem Cell Shipping",
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "ARKGlobal | IVF Embryo & Cryo Shipping Specialist",
   description:
-    "Southeast Asia's leading cryo shipping specialist for IVF samples, embryos, stem cells. IATA compliant, door-to-door service with cold chain integrity.",
-  authors: [{ name: "ARKGlobal" }],
+    "IATA P650 certified cryo courier for IVF embryos, oocytes & sperm. Door-to-door shipping across Southeast Asia & 200+ countries with real-time monitoring.",
+  path: "/",
   keywords: [
     "cryo shipping",
-    "IVF samples",
+    "IVF transport",
+    "embryo shipping",
     "stem cell shipping",
-    "embryo transport",
-    "IATA compliant",
+    "IATA P650",
+    "frozen embryo courier",
   ],
-  openGraph: {
-    title: "ARKGlobal - Your Trusted Cryo Shipper",
-    description:
-      "Southeast Asia's leading cryo shipping specialist for IVF samples, embryos, stem cells. IATA compliant, door-to-door service.",
-    type: "website",
-    url: "https://arkglobal.com",
-    siteName: "ARKGlobal",
-    locale: "en_US",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-snippet": -1,
-      "max-image-preview": "large",
-      "max-video-preview": -1,
-    },
-  },
-};
+});
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  maximumScale: 5,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -52,19 +49,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${poppins.variable} ${inter.variable}`}
+    >
       <body suppressHydrationWarning>
         <RootLayoutClient>{children}</RootLayoutClient>
       </body>

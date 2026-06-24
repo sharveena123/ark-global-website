@@ -1,9 +1,11 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 export default function ShiningButton() {
-  const label = "Contact Us";
+  const label = "We're Here to Help";
   
   const handleContactScroll = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();

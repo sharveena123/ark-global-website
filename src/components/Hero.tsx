@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+import ExternalLinkButton from './animata/shining-button';
 
 
 const HeroSection: React.FC = () => {
@@ -24,73 +26,57 @@ const HeroSection: React.FC = () => {
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8">
           {/* Left Side Images - Hidden on mobile and tablet */}
           <div className="hidden lg:flex flex-col gap-8">
-            <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
-              <img src="/images/pic1.png" alt="Laboratory samples" className="w-full h-full object-cover" />
+            <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg relative">
+              <Image src="/images/pic1.png" alt="Cryogenic IVF sample transport by ARKGlobal courier" fill className="object-cover" sizes="208px" priority />
             </div>
-            <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg ml-10">
-              <img src="/images/pic3.png" alt="Cryogenic storage" className="w-full h-full object-cover" />
+            <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg ml-10 relative">
+              <Image src="/images/pic3.png" alt="Frozen embryo storage in liquid nitrogen dewar" fill className="object-cover" sizes="208px" loading="lazy" />
             </div>
           </div>
 
           {/* Center Content */}
           <div className="flex-1 px-4 py-12 md:px-8 lg:px-16 text-center flex flex-col justify-center items-center min-h-[400px] lg:min-h-[600px]">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-gray-800 font-bold mb-6 leading-tight">
-              Safe, trusted transport of IVF samples & embryos worldwide
-            </h1>
-            <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Handled with precision, care, and complete cold-chain protection. Your fertility journey matters to us.
+            <p className="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-3 font-inter">
+              Trusted by fertility clinics across Southeast Asia
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    const headerOffset = 60;
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                  }
-                }}
-                className="group cursor-pointer rounded-full border-4 border-blue-800 border-opacity-0 bg-transparent p-1 transition-all duration-500 hover:border-opacity-100"
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-gray-800 font-bold mb-4 leading-tight font-poppins">
+              Protecting what matters most on your{" "}
+              <span className="text-blue-600">fertility journey</span>
+            </h1>
+            <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto mb-4 leading-relaxed font-inter">
+              We safely transport IVF samples, embryos, oocytes, and reproductive
+              cells worldwide — with the care, precision, and protection every step
+              of your journey deserves.
+            </p>
+            <p className="text-sm text-gray-500 max-w-xl mx-auto mb-8 font-inter italic">
+              Behind every shipment is a story of hope. We&apos;re honoured to be part of yours.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+              <ExternalLinkButton />
+              <a
+                href="/ivf-transport"
+                className="font-inter text-sm font-semibold text-blue-800 hover:text-blue-600 underline underline-offset-4 transition-colors"
               >
-                <div className="flex items-center justify-center gap-2 rounded-full bg-blue-800 px-8 py-4 font-bold text-white hover:bg-blue-900 transition-colors">
-                  Get a Quote in 24 Hours
-                </div>
-              </button>
-              <button 
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    const headerOffset = 60;
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                  }
-                }}
-                className="px-8 py-4 font-bold text-blue-800 border-2 border-blue-800 rounded-full hover:bg-blue-50 transition-colors"
-              >
-                Talk to a Specialist
-              </button>
+                See how we protect your samples →
+              </a>
             </div>
           </div>
 
           {/* Right Side Images - Hidden on mobile and tablet */}
           <div className="hidden lg:flex flex-col gap-8 items-end">
-            <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
-              <img src="/images/pic2.png" alt="Cryogenic process" className="w-full h-full object-cover" />
+            <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg relative">
+              <Image src="/images/pic2.png" alt="IATA certified cryogenic dry shipper for embryo transport" fill className="object-cover" sizes="208px" loading="lazy" />
             </div>
-            <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg mr-10">
-              <img src="/images/pic5.png" alt="Sample container" className="w-full h-full object-cover" />
+            <div className="w-52 h-52 bg-gray-300 rounded-lg overflow-hidden shadow-lg mr-10 relative">
+              <Image src="/images/pic5.png" alt="Secure biological sample container for air transport" fill className="object-cover" sizes="208px" loading="lazy" />
             </div>
           </div>
         </div>
 
         {/* Bottom Center Image - Hidden on mobile and tablet */}
-        <div className="hidden lg:flex justify-center -mt-43">
-          <div className="w-52 h-48 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
-            <img src="/images/pic4.png" alt="Laboratory work" className="w-full h-full object-cover" />
+        <div className="hidden lg:flex justify-center -mt-30">
+          <div className="w-52 h-56 bg-gray-300 rounded-lg overflow-hidden shadow-lg relative">
+            <Image src="/images/pic4.png" alt="Embryology laboratory handling frozen reproductive samples" fill className="object-cover" sizes="208px" loading="lazy" />
           </div>
         </div>
       </div>

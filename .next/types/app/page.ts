@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // File: C:\Users\Sharveena\OneDrive\Desktop\ark-global-website\src\app\page.tsx
+=======
+// File: C:\Users\Sharveena\ark-global-website\src\app\page.tsx
+>>>>>>> c6fd26a (major update)
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -8,28 +8,53 @@ const Services = () => {
   const services = [
     {
       icon: Baby,
-      title: "IVF Cryo Shipping",
-      description: "Safe transport of frozen eggs, embryos & sperm with complete cold-chain protection"
+      title: "Frozen Eggs",
+      features: [
+        "Handled with utmost care",
+        "IATA & EU compliant",
+        "Hand-carried by trained couriers",
+        "Flexible, patient-centred scheduling",
+      ],
     },
     {
       icon: Package,
-      title: "Embryo Transport",
-      description: "Specialized handling of precious embryos with continuous monitoring throughout"
+      title: "Sperm Samples",
+      features: [
+        "Secure liquid nitrogen dewars",
+        "Stable, contamination-free transport",
+        "Discreet, confidential handling",
+        "Delivered safely, worldwide",
+      ],
     },
     {
       icon: Microscope,
-      title: "Stem Cell Logistics",
-      description: "Advanced preservation methods for sensitive biological samples"
+      title: "Frozen Embryos",
+      features: [
+        "Specialised dry shippers",
+        "Live temperature monitoring",
+        "Gentle door-to-door delivery",
+        "Full international compliance",
+      ],
     },
     {
       icon: Globe,
-      title: "Global Courier Service",
-      description: "Worldwide delivery with hand-carried, door-to-door protection"
+      title: "Stem Cells",
+      features: [
+        "Advanced preservation methods",
+        "Certified long-distance transport",
+        "Expert biological handlers",
+        "Trusted by clinics & research labs",
+      ],
     },
     {
       icon: Plane,
-      title: "Regulatory Support",
-      description: "Complete permit handling and international compliance coordination"
+      title: "Permits & Compliance",
+      features: [
+        "Import & export support",
+        "Permit management handled for you",
+        "Documentation guidance",
+        "Regulatory coordination worldwide",
+      ],
     },
   ];
 
@@ -73,9 +98,8 @@ const Services = () => {
       <div className="container py-12 mx-auto px-4">
         {/* Header */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          initial="visible"
+          animate="visible"
           variants={container}
           className="text-center mb-16"
         >
@@ -89,16 +113,16 @@ const Services = () => {
             variants={fadeUp(0.1)}
             className="font-inter text-lg text-muted-foreground max-w-3xl mx-auto"
           >
-We understand that each shipment represents hopes, dreams, and precious moments. That's why every sample is handled with the utmost care and professionalism.
-
+            From frozen embryos to stem cells, we provide end-to-end cryogenic
+            transport — protecting what matters most with care you can feel and
+            standards you can trust.
           </motion.p>
         </motion.div>
 
         {/* Single-row Services Grid */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          initial="visible"
+          animate="visible"
           variants={container}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-16"
         >

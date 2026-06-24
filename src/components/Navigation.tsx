@@ -1,23 +1,27 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>, targetId: string) => {
+    if (!isHome) {
+      // Navigate to home then scroll — let the link handle it
+      return;
+    }
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
       const headerOffset = 70;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
     setIsMenuOpen(false);
   };
@@ -36,31 +40,41 @@ const Navigation: React.FC = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-12 text-gray-700">
-          <button 
+        <div className="hidden md:flex gap-10 text-gray-700 items-center">
+          <a
+            href={isHome ? '#hero' : '/#hero'}
             onClick={(e) => handleSmoothScroll(e, 'hero')}
-            className="hover:text-blue-500 transition-colors bg-transparent border-none cursor-pointer font-inherit text-inherit"
+            className="hover:text-blue-500 transition-colors"
           >
             Home
-          </button>
-          <button 
+          </a>
+          <a
+            href={isHome ? '#business' : '/#business'}
             onClick={(e) => handleSmoothScroll(e, 'business')}
-            className="hover:text-blue-500 transition-colors bg-transparent border-none cursor-pointer font-inherit text-inherit"
+            className="hover:text-blue-500 transition-colors"
           >
             Business
-          </button>
-          <button 
+          </a>
+          <a
+            href={isHome ? '#company' : '/#company'}
             onClick={(e) => handleSmoothScroll(e, 'company')}
-            className="hover:text-blue-500 transition-colors bg-transparent border-none cursor-pointer font-inherit text-inherit"
+            className="hover:text-blue-500 transition-colors"
           >
             Corporate
-          </button>
-          <button 
+          </a>
+          <Link
+            href="/blog"
+            className={`hover:text-blue-500 transition-colors ${pathname.startsWith('/blog') ? 'text-blue-500' : ''}`}
+          >
+            Blog
+          </Link>
+          <a
+            href={isHome ? '#contact' : '/#contact'}
             onClick={(e) => handleSmoothScroll(e, 'contact')}
-            className="hover:text-blue-500 transition-colors bg-transparent border-none cursor-pointer font-inherit text-inherit"
+            className="hover:text-blue-500 transition-colors"
           >
             Contact Us
-          </button>
+          </a>
         </div>
         
         {/* Mobile Hamburger Button */}
@@ -81,30 +95,41 @@ const Navigation: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-gray-200 z-40">
           <div className="flex flex-col py-4">
-            <button 
-              onClick={(e) => handleSmoothScroll(e, 'hero')}
-              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left bg-transparent border-none cursor-pointer font-inherit w-full"
+            <a
+              href={isHome ? '#hero' : '/#hero'}
+              onClick={(e) => { handleSmoothScroll(e, 'hero'); setIsMenuOpen(false); }}
+              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left"
             >
               Home
-            </button>
-            <button 
-              onClick={(e) => handleSmoothScroll(e, 'company')}
-              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left bg-transparent border-none cursor-pointer font-inherit w-full"
+            </a>
+            <a
+              href={isHome ? '#company' : '/#company'}
+              onClick={(e) => { handleSmoothScroll(e, 'company'); setIsMenuOpen(false); }}
+              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left"
             >
               Corporate
-            </button>
-            <button 
-              onClick={(e) => handleSmoothScroll(e, 'business')}
-              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left bg-transparent border-none cursor-pointer font-inherit w-full"
+            </a>
+            <a
+              href={isHome ? '#business' : '/#business'}
+              onClick={(e) => { handleSmoothScroll(e, 'business'); setIsMenuOpen(false); }}
+              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left"
             >
               Business
-            </button>
-            <button 
-              onClick={(e) => handleSmoothScroll(e, 'contact')}
-              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left bg-transparent border-none cursor-pointer font-inherit w-full"
+            </a>
+            <Link
+              href="/blog"
+              onClick={() => setIsMenuOpen(false)}
+              className={`px-6 py-3 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left font-medium ${pathname.startsWith('/blog') ? 'text-blue-500' : 'text-gray-700'}`}
+            >
+              Blog
+            </Link>
+            <a
+              href={isHome ? '#contact' : '/#contact'}
+              onClick={(e) => { handleSmoothScroll(e, 'contact'); setIsMenuOpen(false); }}
+              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left"
             >
               Reach Us
-            </button>
+            </a>
           </div>
         </div>
       )}

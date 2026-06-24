@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "453edc2e117875ac8eadc7c1ca415524",
-    "previewModeSigningKey": "d9c7a47bc847072a85582d972f46063ca49c727ac11453a41fc04291e6254f4a",
-    "previewModeEncryptionKey": "21f787b7d7e6dbdc1bd162b0a3f3890dc3295053f62c2778636bd0232176aefa"
-  }
-}
+{"version":4,"routes":{"/blog/ship-frozen-embryos-from-malaysia":{},"/blog/ivf-southeast-asia-market-growth":{},"/blog/iata-p650-certification-embryo-shipping":{},"/blog/shipping-embryos-malaysia-to-australia":{},"/blog/egg-freezing-southeast-asia-guide":{},"/blog/cold-chain-integrity-ivf-embryo-transport":{},"/blog/how-are-ivf-embryos-transported-internationally":{},"/blog/what-is-a-cryogenic-dry-shipper":{},"/blog/can-frozen-embryos-be-transported-safely":{},"/blog/international-regulations-ivf-shipping":{},"/blog/choosing-the-right-ivf-courier":{},"/blog/why-temperature-control-matters-embryo-shipping":{},"/blog/ivf-sample-transportation-process-explained":{},"/blog/moving-your-fertility-journey-abroad":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"4e401d0b985d4bda9af52bcc7640d2f2","previewModeSigningKey":"d7b2ab9f7305b4b504a2d4990cd1483203e46a49f9382160f4320ff37e329459","previewModeEncryptionKey":"1ab48e34b35c0f23d12043d0f0b233a9383da209cfefa2def26154e2aa7ef5d8"}}

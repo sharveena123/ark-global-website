@@ -1,34 +1,43 @@
-"use client";
+import HomePage from "@/components/HomePage";
+import JsonLd from "@/components/seo/JsonLd";
+import { homeFaqs } from "@/lib/faq-data";
+import {
+  faqPageSchema,
+  medicalBusinessSchema,
+  organizationSchema,
+  websiteSchema,
+} from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/seo";
 
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Stats from "@/components/Stats";
-import About from "@/components/About";
-import Testimonials from "@/components/Testimonials";
-import CTASection from "@/components/CTASection";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsappButton";
-import WhyUs from "@/components/WhyUs";
+export const metadata = buildPageMetadata({
+  title: "ARKGlobal | IVF Embryo & Cryo Shipping Specialist",
+  description:
+    "IATA P650 certified cryo courier for IVF embryos, oocytes & sperm. Door-to-door shipping across Southeast Asia & 200+ countries with real-time monitoring.",
+  path: "/",
+  keywords: [
+    "IVF transport",
+    "embryo shipping",
+    "cryo shipping",
+    "frozen embryo courier",
+    "IATA P650",
+    "cryogenic dry shipper",
+    "fertility sample transport",
+    "Southeast Asia IVF logistics",
+  ],
+});
 
-// Skip static rendering for this page since it has dynamic external dependencies
-export const dynamic = "force-dynamic";
-
-export default function Home() {
+export default function Page() {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <WhatsAppButton />
-      <Hero />
-      <Services />
-      <Stats />
-      <About />
-      <Testimonials />
-      <CTASection />
-      <WhyUs />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      <JsonLd
+        data={[
+          organizationSchema(),
+          medicalBusinessSchema(),
+          websiteSchema(),
+          faqPageSchema(homeFaqs),
+        ]}
+      />
+      <HomePage />
+    </>
   );
 }

@@ -36,6 +36,51 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 }
 
 
+// Validate ../../src/app/blog/[slug]/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/blog/[slug]">> = Specific
+  const handler = {} as typeof import("../../src/app/blog/[slug]/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/blog/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/blog">> = Specific
+  const handler = {} as typeof import("../../src/app/blog/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/cryo-shipping/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/cryo-shipping">> = Specific
+  const handler = {} as typeof import("../../src/app/cryo-shipping/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/embryo-shipping/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/embryo-shipping">> = Specific
+  const handler = {} as typeof import("../../src/app/embryo-shipping/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/ivf-transport/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/ivf-transport">> = Specific
+  const handler = {} as typeof import("../../src/app/ivf-transport/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific

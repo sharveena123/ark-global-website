@@ -72,11 +72,11 @@ const Testimonials = () => {
         {/* Header */}
         <div className="mb-16">
           <h2 className="font-poppins font-bold text-4xl lg:text-5xl text-foreground mb-4">
-            What Our Clients Say
+            Stories of trust from those we serve
           </h2>
           <p className="font-inter text-xl text-muted-foreground max-w-2xl mx-auto">
-            Trusted by leading fertility clinics and research institutions
-            worldwide
+            Fertility clinics and patients around the world share what it means to
+            know their samples are in caring, capable hands.
           </p>
         </div>
 
