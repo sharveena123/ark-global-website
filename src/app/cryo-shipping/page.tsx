@@ -43,7 +43,7 @@ const config = {
     {
       question: "Can you ship cryo samples worldwide?",
       answer:
-        "Yes. ARKGlobal provides door-to-door cryo shipping to over 200 countries, with expertise in Southeast Asian routes and major international corridors to Australia, Europe, and the Middle East.",
+        "Yes. ARKGlobal provides door-to-door cryo shipping to over 200 countries worldwide, with deep expertise across Asia, Australia, Europe, the Middle East, and the Americas.",
     },
   ],
   ctaText:
@@ -59,7 +59,7 @@ const config = {
 export const metadata: Metadata = buildPageMetadata({
   title: "Cryo Shipping | IATA Certified Cryogenic Courier",
   description:
-    "Specialist cryo shipping for IVF samples using dry shippers & real-time monitoring. IATA P650 certified door-to-door service across Southeast Asia.",
+    "Specialist global cryo shipping for IVF samples using dry shippers & real-time monitoring. IATA P650 certified door-to-door service across 200+ countries.",
   path: "/cryo-shipping",
   keywords: [
     "cryo shipping",

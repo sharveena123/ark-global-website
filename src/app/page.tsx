@@ -12,7 +12,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "ARKGlobal | IVF Embryo & Cryo Shipping Specialist",
   description:
-    "IATA P650 certified cryo courier for IVF embryos, oocytes & sperm. Door-to-door shipping across Southeast Asia & 200+ countries with real-time monitoring.",
+    "IATA P650 certified global cryo courier for IVF embryos, oocytes & sperm. Door-to-door shipping across 200+ countries with real-time monitoring.",
   path: "/",
   keywords: [
     "IVF transport",
@@ -22,7 +22,8 @@ export const metadata = buildPageMetadata({
     "IATA P650",
     "cryogenic dry shipper",
     "fertility sample transport",
-    "Southeast Asia IVF logistics",
+    "international IVF logistics",
+    "global cryo courier",
   ],
 });
 

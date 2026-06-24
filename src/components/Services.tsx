@@ -122,8 +122,8 @@ const Services = () => {
             className="font-inter text-lg text-muted-foreground max-w-3xl mx-auto"
           >
             From frozen embryos to stem cells, we provide end-to-end cryogenic
-            transport — protecting what matters most with care you can feel and
-            standards you can trust.
+            transport worldwide — protecting what matters most with care you can
+            feel and standards you can trust.
           </motion.p>
         </motion.div>
 

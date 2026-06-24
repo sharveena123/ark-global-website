@@ -46,9 +46,10 @@ export default function EEAT() {
             Trusted care for life&apos;s most precious journey
           </h2>
           <p className="font-inter text-lg text-muted-foreground max-w-3xl mx-auto">
-            Behind every shipment is a story of hope. We are committed to protecting
-            what matters most — with the expertise of a specialist and the compassion
-            of people who truly understand.
+            Behind every shipment is a story of hope. As a global cryo courier
+            operating across 200+ countries, we protect what matters most — with
+            the expertise of a specialist and the compassion of people who truly
+            understand.
           </p>
         </div>
 

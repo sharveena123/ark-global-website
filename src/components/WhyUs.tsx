@@ -64,8 +64,8 @@ const WhyUs = () => {
               Where precision meets compassion
             </h2>
             <p className="font-inter text-xl text-muted-foreground mb-8">
-              Cryogenic expertise you can trust — delivered with the personal care
-              your fertility journey deserves.
+              Cryogenic expertise you can trust — delivered with personal care to
+              fertility clinics and patients around the world.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">

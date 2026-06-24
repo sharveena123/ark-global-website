@@ -37,7 +37,7 @@ const HeroSection: React.FC = () => {
           {/* Center Content */}
           <div className="flex-1 px-4 py-12 md:px-8 lg:px-16 text-center flex flex-col justify-center items-center min-h-[400px] lg:min-h-[600px]">
             <p className="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-3 font-inter">
-              Trusted by fertility clinics across Southeast Asia
+              Trusted by fertility clinics worldwide
             </p>
             <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-gray-800 font-bold mb-4 leading-tight font-poppins">
               Protecting what matters most on your{" "}

@@ -28,7 +28,7 @@ const config = {
     },
     {
       heading: "Popular Embryo Shipping Routes",
-      body: "ARKGlobal handles embryo shipments across Southeast Asia and internationally. Common corridors include Malaysia to Australia, Singapore to the UK, Thailand to the Middle East, and intra-SEA transfers between KL, Bangkok, and Manila. We understand the specific import requirements of each destination.",
+      body: "ARKGlobal handles embryo shipments globally. Common international corridors include Malaysia to Australia, Singapore to the UK, Thailand to the Middle East, Europe to Asia, and the Americas. We understand the specific import requirements of each destination country.",
     },
   ],
   faqs: [

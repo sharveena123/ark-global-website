@@ -21,7 +21,7 @@ const inter = Inter({
 export const metadata: Metadata = buildPageMetadata({
   title: "ARKGlobal | IVF Embryo & Cryo Shipping Specialist",
   description:
-    "IATA P650 certified cryo courier for IVF embryos, oocytes & sperm. Door-to-door shipping across Southeast Asia & 200+ countries with real-time monitoring.",
+    "IATA P650 certified global cryo courier for IVF embryos, oocytes & sperm. Door-to-door shipping across 200+ countries with real-time monitoring.",
   path: "/",
   keywords: [
     "cryo shipping",
@@ -30,6 +30,8 @@ export const metadata: Metadata = buildPageMetadata({
     "stem cell shipping",
     "IATA P650",
     "frozen embryo courier",
+    "international IVF courier",
+    "global cryo shipping",
   ],
 });
 

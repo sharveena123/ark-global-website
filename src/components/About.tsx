@@ -85,11 +85,10 @@ const About = () => {
             We Are <span className="text-primary">ARKGlobal</span>
           </h2>
           <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
-            We are a Southeast Asia specialist in cryogenic shipping for assisted
-            reproduction — and we understand that behind every sample is a deeply
-            personal story. Whether you are a fertility clinic or an individual on
-            your path to parenthood, we carry your hope with the responsibility it
-            deserves.
+            We are a global specialist in cryogenic shipping for assisted
+            reproduction — headquartered in Malaysia and serving fertility clinics
+            and patients internationally. Behind every sample is a deeply personal
+            story, and we carry your hope with the responsibility it deserves.
           </p>
         </div>
 

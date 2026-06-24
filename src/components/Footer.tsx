@@ -26,9 +26,9 @@ const Footer = () => {
               </p>
             </div>
             <p className="font-inter text-background/80">
-              Southeast Asia&apos;s trusted specialist in cryogenic shipping for IVF
-              samples, embryos, and reproductive cells — where precision meets
-              compassion on every journey.
+              Global specialist in cryogenic shipping for IVF samples, embryos,
+              and reproductive cells — operating internationally across 200+
+              countries, where precision meets compassion on every journey.
             </p>
             <div className="flex gap-4">
               <a href="https://linkedin.com/in/ark-global-cryogenic-shipper-1721362a5"

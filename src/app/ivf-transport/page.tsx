@@ -34,7 +34,7 @@ const config = {
     },
     {
       heading: "Why Clinics Choose ARKGlobal",
-      body: "Fertility clinics across Southeast Asia trust ARKGlobal because we combine regulatory expertise with hands-on cryogenic logistics experience. We understand the import requirements of Australia, the UK, the UAE, Singapore, Malaysia, and dozens of other destinations — and we coordinate directly with both sending and receiving clinics so patients don't have to manage logistics themselves.",
+      body: "Fertility clinics worldwide trust ARKGlobal because we combine regulatory expertise with hands-on cryogenic logistics experience. We understand the import requirements of Australia, the UK, the UAE, the US, Europe, and dozens of other destinations — and we coordinate directly with both sending and receiving clinics so patients don't have to manage logistics themselves.",
     },
   ],
   faqs: [
@@ -67,7 +67,7 @@ const config = {
 export const metadata: Metadata = buildPageMetadata({
   title: "IVF Transport Services | International Sample Courier",
   description:
-    "IATA-certified IVF transport for embryos, eggs & sperm. Door-to-door cryo shipping with real-time monitoring across Southeast Asia & worldwide.",
+    "IATA-certified global IVF transport for embryos, eggs & sperm. Door-to-door cryo shipping with real-time monitoring across 200+ countries.",
   path: "/ivf-transport",
   keywords: [
     "IVF transport",

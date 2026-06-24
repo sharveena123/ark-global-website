@@ -18,6 +18,12 @@ const isFirebaseConfigured = !!(
   process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID
 );
 
+if (process.env.NODE_ENV === "development" && !isFirebaseConfigured) {
+  console.warn(
+    "[ARKGlobal] Firebase is not configured. Add NEXT_PUBLIC_FIREBASE_* variables to .env.local and restart the dev server."
+  );
+}
+
 let app;
 let db: any = null;
 let realtimeDb: any = null;

@@ -14,7 +14,7 @@ export function organizationSchema() {
     url: SITE_URL,
     logo: `${SITE_URL}/images/pic1.png`,
     description:
-      "Southeast Asia specialist in cryogenic shipping for IVF embryos, oocytes, sperm, and reproductive cells for fertility clinics and patients worldwide.",
+      "Global specialist in cryogenic shipping for IVF embryos, oocytes, sperm, and reproductive cells. Serving fertility clinics and patients internationally across 200+ countries.",
     email: COMPANY_EMAIL,
     telephone: COMPANY_PHONE,
     foundingLocation: {
@@ -92,7 +92,7 @@ export function websiteSchema() {
     name: SITE_NAME,
     url: SITE_URL,
     description:
-      "IATA-certified cryo courier for international IVF and embryo shipping across Southeast Asia and worldwide.",
+      "IATA-certified global cryo courier for international IVF and embryo shipping across 200+ countries worldwide.",
     publisher: { "@type": "Organization", name: SITE_NAME },
   };
 }
