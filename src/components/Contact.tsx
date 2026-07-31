@@ -129,14 +129,14 @@ Thank you!`
       title: "Phone & WhatsApp",
       value: "+60 12-219 6896",
       link: "tel:+60122196896",
-      description: "Available 24/7 for urgent shipments"
+      description: "Here whenever you need us — including urgent shipments"
     },
     {
       icon: Mail,
       title: "Email",
       value: "operations@arkglobalasia.com", 
       link: "mailto:operations@arkglobalasia.com",
-      description: "For quotes and general inquiries"
+      description: "For quotes, questions, and peace of mind"
     },
     {
       icon: MessageSquare,
@@ -154,11 +154,11 @@ Thank you!`
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-poppins font-bold text-4xl lg:text-5xl text-foreground mb-6">
-            Let's discuss your <span className="text-primary">fertility journey</span>
+            We&apos;re here when you&apos;re ready
           </h2>
           <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our specialists are here to answer all your questions and provide a personalized quote within 24 hours. 
-            You're not alone in this—we're here to help.
+            Whether you&apos;re planning your first shipment or simply have questions,
+            our team is here to listen — and to help you move forward with confidence.
           </p>
         </div>
 
@@ -171,8 +171,8 @@ Thank you!`
                   Request a Quote
                 </CardTitle>
                 <p className="font-inter text-muted-foreground">
-                  We would gladly provide you with detailed information if you have any queries.
-                  Expect a response within 24 hours.
+                  Share a few details and we&apos;ll respond within 24 hours with
+                  thoughtful, personalised guidance — no pressure, no obligation.
                 </p>
               </CardHeader>
 

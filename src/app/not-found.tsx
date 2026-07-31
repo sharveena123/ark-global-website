@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Page Not Found",
+  description: "The page you are looking for does not exist. Return to ARKGlobal for IVF and cryo shipping services.",
+  path: "/404",
+  noIndex: true,
+});
 
 export default function NotFound() {
   return (
