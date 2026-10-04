@@ -90,7 +90,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/blog" className="hover:text-primary transition-smooth">
-                  Knowledge Centre
+                  Blog
                 </Link>
               </li>
               <li>
