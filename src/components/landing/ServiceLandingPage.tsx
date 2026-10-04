@@ -21,6 +21,7 @@ export interface ServiceLandingConfig {
   path: string;
   h1: string;
   subtitle: string;
+  professionalLine?: string;
   intro: string;
   sections: LandingSection[];
   faqs: FAQItem[];
@@ -72,6 +73,11 @@ export default function ServiceLandingPage({ config }: Props) {
           <p className="font-inter text-lg text-white/80 leading-relaxed">
             {config.subtitle}
           </p>
+          {config.professionalLine ? (
+            <p className="font-inter text-sm text-white/60 mt-3 leading-relaxed">
+              {config.professionalLine}
+            </p>
+          ) : null}
         </div>
       </section>
 

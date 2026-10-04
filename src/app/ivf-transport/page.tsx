@@ -67,7 +67,7 @@ const config = {
 export const metadata: Metadata = buildPageMetadata({
   title: "IVF Transport Services | International Sample Courier",
   description:
-    "IATA-certified global IVF transport for embryos, eggs & sperm. Door-to-door cryo shipping with real-time monitoring across 200+ countries.",
+    "International IVF transport for embryos, eggs & sperm. Hand-carry dry shippers, clinic coordination, permits, and monitored cold chain from Malaysia.",
   path: "/ivf-transport",
   keywords: [
     "IVF transport",

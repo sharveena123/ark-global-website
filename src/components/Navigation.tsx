@@ -63,10 +63,16 @@ const Navigation: React.FC = () => {
             Corporate
           </a>
           <Link
+            href="/services"
+            className={`hover:text-blue-500 transition-colors ${pathname.startsWith('/services') || pathname.includes('transport') ? 'text-blue-500' : ''}`}
+          >
+            Services
+          </Link>
+          <Link
             href="/blog"
             className={`hover:text-blue-500 transition-colors ${pathname.startsWith('/blog') ? 'text-blue-500' : ''}`}
           >
-            Blog
+            Knowledge Centre
           </Link>
           <a
             href={isHome ? '#contact' : '/#contact'}
@@ -117,11 +123,18 @@ const Navigation: React.FC = () => {
               Business
             </a>
             <Link
+              href="/services"
+              onClick={() => setIsMenuOpen(false)}
+              className="px-6 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left"
+            >
+              Services
+            </Link>
+            <Link
               href="/blog"
               onClick={() => setIsMenuOpen(false)}
               className={`px-6 py-3 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left font-medium ${pathname.startsWith('/blog') ? 'text-blue-500' : 'text-gray-700'}`}
             >
-              Blog
+              Knowledge Centre
             </Link>
             <a
               href={isHome ? '#contact' : '/#contact'}

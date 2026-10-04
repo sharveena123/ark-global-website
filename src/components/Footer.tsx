@@ -26,9 +26,9 @@ const Footer = () => {
               </p>
             </div>
             <p className="font-inter text-background/80">
-              Global specialist in cryogenic shipping for IVF samples, embryos,
-              and reproductive cells — operating internationally across 200+
-              countries, where precision meets compassion on every journey.
+              International cryogenic medical logistics for IVF embryos, oocytes,
+              sperm, and biological specimens — clinic coordination, dry shippers,
+              and monitored hand-carry transport from Malaysia worldwide.
             </p>
             <div className="flex gap-4">
               <a href="https://linkedin.com/in/ark-global-cryogenic-shipper-1721362a5"
@@ -45,19 +45,29 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 font-inter text-background/80">
               <li>
-                  IVF Cryo Shipping
+                <Link href="/ivf-specimen-transportation" className="hover:text-primary transition-smooth">
+                  IVF specimen transportation
+                </Link>
               </li>
               <li>
-                  Stem Cell Shipping
+                <Link href="/frozen-embryo-transport" className="hover:text-primary transition-smooth">
+                  Frozen embryo transport
+                </Link>
               </li>
               <li>
-                  Cryogenic Solutions
+                <Link href="/ivf-hand-carry" className="hover:text-primary transition-smooth">
+                  IVF hand-carry
+                </Link>
               </li>
               <li>
-                  Global Logistics
+                <Link href="/cryogenic-medical-logistics" className="hover:text-primary transition-smooth">
+                  Cryogenic medical logistics
+                </Link>
               </li>
               <li>
-                  Delivery Solutions
+                <Link href="/services" className="hover:text-primary transition-smooth">
+                  View all services
+                </Link>
               </li>
             </ul>
           </div>
@@ -69,8 +79,18 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 font-inter text-background/80">
               <li>
+                <Link href="/international-cryogenic-medical-logistics" className="hover:text-primary transition-smooth">
+                  About ARK Global logistics
+                </Link>
+              </li>
+              <li>
+                <Link href="/corridors" className="hover:text-primary transition-smooth">
+                  Transport corridors
+                </Link>
+              </li>
+              <li>
                 <Link href="/blog" className="hover:text-primary transition-smooth">
-                  Blog &amp; Guides
+                  Knowledge Centre
                 </Link>
               </li>
               <li>

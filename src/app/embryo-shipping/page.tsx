@@ -35,7 +35,7 @@ const config = {
     {
       question: "Is embryo transportation safe?",
       answer:
-        "Yes. Professional embryo shipping using IATA P650-certified dry shippers and real-time temperature monitoring maintains viability. ARKGlobal has a 100% cold chain success rate across all shipments.",
+        "Yes. Professional embryo shipping using IATA P650-aligned dry shippers and real-time temperature monitoring maintains viability, with documented chain of custody for clinics.",
     },
     {
       question: "How long can embryos stay frozen during shipping?",
@@ -61,7 +61,7 @@ const config = {
 export const metadata: Metadata = buildPageMetadata({
   title: "Embryo Shipping | Frozen Embryo Courier Worldwide",
   description:
-    "IATA P650 certified frozen embryo shipping with real-time cold chain monitoring. Door-to-door delivery for clinics & patients across 200+ countries.",
+    "Frozen embryo shipping with IATA P650-aligned dry shippers, monitoring, and clinic-to-clinic delivery internationally.",
   path: "/embryo-shipping",
   keywords: [
     "embryo shipping",

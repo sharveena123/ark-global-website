@@ -18,7 +18,7 @@ const trustPoints = [
     icon: Globe2,
     title: "Global Reach with Personal Care",
     description:
-      "We serve fertility clinics and patients across 200+ countries — yet every shipment receives individual attention. You are never just a reference number to us.",
+      "We plan international clinic-to-clinic routes across Asia-Pacific, the Middle East, Europe, and the Americas — with individual attention on every shipment.",
   },
   {
     icon: ShieldCheck,
@@ -30,7 +30,7 @@ const trustPoints = [
     icon: FileCheck2,
     title: "International Compliance You Can Trust",
     description:
-      "IATA P650 certified, EU Tissue Directive compliant, and MOF registered. We navigate complex import and export regulations so you can focus on what matters — your fertility journey.",
+      "IATA P650-aligned protocols, MOF registered (Malaysia), and destination-aware import documentation. We navigate regulations so clinics and patients can focus on care.",
   },
 ];
 
@@ -46,10 +46,9 @@ export default function EEAT() {
             Trusted care for life&apos;s most precious journey
           </h2>
           <p className="font-inter text-lg text-muted-foreground max-w-3xl mx-auto">
-            Behind every shipment is a story of hope. As a global cryo courier
-            operating across 200+ countries, we protect what matters most — with
-            the expertise of a specialist and the compassion of people who truly
-            understand.
+            Behind every shipment is a story of hope. ARK Global combines
+            international cryogenic medical logistics with the compassion of a
+            team that understands fertility journeys.
           </p>
         </div>
 
@@ -76,11 +75,11 @@ export default function EEAT() {
 
         <div className="flex flex-wrap justify-center gap-4 mb-10">
           {[
-            "IATA P650 Certified",
+            "IATA P650-aligned",
             "MOF Registered (Malaysia)",
-            "EU Tissue Compliant",
-            "WHO Standards",
-            "MVE Dewars Certified",
+            "Clinic verification",
+            "Dry shipper logistics",
+            "CT0123202-W",
           ].map((badge) => (
             <span
               key={badge}
@@ -97,29 +96,17 @@ export default function EEAT() {
             Every journey is different. We&apos;re here to guide yours:
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/ivf-transport"
-              className="font-inter text-sm font-semibold text-primary hover:underline"
-            >
-              IVF Transport →
+            <Link href="/international-cryogenic-medical-logistics" className="font-inter text-sm font-semibold text-primary hover:underline">
+              ARK Global authority →
             </Link>
-            <Link
-              href="/embryo-shipping"
-              className="font-inter text-sm font-semibold text-primary hover:underline"
-            >
-              Embryo Shipping →
+            <Link href="/services" className="font-inter text-sm font-semibold text-primary hover:underline">
+              All services →
             </Link>
-            <Link
-              href="/cryo-shipping"
-              className="font-inter text-sm font-semibold text-primary hover:underline"
-            >
-              Cryo Shipping →
+            <Link href="/corridors" className="font-inter text-sm font-semibold text-primary hover:underline">
+              Country corridors →
             </Link>
-            <Link
-              href="/blog"
-              className="font-inter text-sm font-semibold text-primary hover:underline"
-            >
-              Expert Guides →
+            <Link href="/blog" className="font-inter text-sm font-semibold text-primary hover:underline">
+              Knowledge Centre →
             </Link>
           </div>
         </div>

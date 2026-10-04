@@ -10,9 +10,9 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Blog | Cryo Shipping & IVF Transport Guides",
+  title: "Knowledge Centre | IVF Cryogenic Transport Guides",
   description:
-    "Expert guides on IVF embryo transport, cryogenic dry shippers, IATA P650 compliance, and international fertility logistics from ARKGlobal.",
+    "ARK Global Knowledge Centre: expert guides on international IVF embryo transport, dry shippers, IATA P650, permits, and country corridors.",
   path: "/blog",
   keywords: [
     "IVF blog",
@@ -40,7 +40,7 @@ export default function BlogPage() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "Blog", path: "/blog" },
+          { name: "Knowledge Centre", path: "/blog" },
         ])}
       />
       <Navigation />
@@ -50,15 +50,11 @@ export default function BlogPage() {
         <div className="container mx-auto px-4 text-center">
           <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-inter font-medium mb-6">
             <BookOpen className="w-4 h-4" />
-            ARKGlobal Blog
+            ARK Global Knowledge Centre
           </div>
           <h1 className="font-poppins font-bold text-4xl lg:text-5xl text-white mb-4">
-            Cryo Shipping <span className="text-primary">Insights</span>
+            IVF cryogenic transport <span className="text-primary">guides</span>
           </h1>
-          <p className="font-inter text-lg text-white/80 max-w-2xl mx-auto">
-            Honest, expert guidance for patients and clinics navigating international
-            fertility transport — written with care, backed by experience.
-          </p>
         </div>
       </section>
 
@@ -72,6 +68,7 @@ export default function BlogPage() {
         </div>
       </section>
 
+      
       {/* CTA Strip */}
       <section className="py-16 bg-gradient-to-r from-[#0A2540] to-[#00AEEF]">
         <div className="container mx-auto px-4 text-center">

@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Poppins, Inter } from "next/font/google";
 import "@/index.css";
 import { RootLayoutClient } from "./layout-client";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, SITE_DESCRIPTION } from "@/lib/seo";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,9 +19,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "ARKGlobal | IVF Embryo & Cryo Shipping Specialist",
-  description:
-    "IATA P650 certified global cryo courier for IVF embryos, oocytes & sperm. Door-to-door shipping across 200+ countries with real-time monitoring.",
+  title: "ARK Global | International IVF Cryogenic Transportation",
+  description: SITE_DESCRIPTION,
   path: "/",
   keywords: [
     "cryo shipping",

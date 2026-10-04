@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const SITE_URL = "https://arkglobal.com";
 export const SITE_NAME = "ARKGlobal";
 export const SITE_DESCRIPTION =
-  "Global cryo courier for IVF embryos, oocytes, sperm, and reproductive cells. IATA P650 certified with door-to-door service across 200+ countries and real-time cold chain monitoring.";
+  "International cryogenic medical logistics for IVF embryos, oocytes, sperm, and biological specimens. Malaysia-based hand-carry couriers, dry shippers, clinic coordination, and monitored cold chain.";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/pic1.png`;
 export const COMPANY_EMAIL = "operations@arkglobalasia.com";
 export const COMPANY_PHONE = "+60-12-219-6896";

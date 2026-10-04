@@ -9,7 +9,7 @@ export const homeFaqs: FAQItem[] = [
   {
     question: "Is embryo transportation safe?",
     answer:
-      "Yes, when handled by an IATA-certified cryo courier. Frozen embryos in vitrified form remain stable below -150°C. Professional couriers use certified dry shippers, continuous temperature monitoring, and door-to-door hand-carry service to prevent cold chain breaks. ARKGlobal has maintained a 100% cold chain success rate across all shipments.",
+      "Yes, when handled by an IATA-aligned cryo courier. Frozen embryos in vitrified form remain stable below -150°C. Professional couriers use certified dry shippers, continuous temperature monitoring, and door-to-door hand-carry service to prevent cold chain breaks, with documented custody and temperature records for clinics.",
   },
   {
     question: "What is a cryogenic dry shipper?",

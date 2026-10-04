@@ -6,8 +6,8 @@ export default function ClosingStatement() {
           Safely carrying hope across borders.
         </p>
         <p className="font-inter text-white/75 text-lg leading-relaxed">
-          Protecting your future, one journey at a time — safely carrying hope
-          across borders to over 200 countries worldwide.
+          International cryogenic medical logistics for reproductive specimens —
+          with the care your journey deserves and the precision clinics require.
         </p>
       </div>
     </section>

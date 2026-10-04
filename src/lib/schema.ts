@@ -1,3 +1,4 @@
+import { GEOGRAPHIC_REACH, PROFESSIONAL_TAGLINE } from "./company-facts";
 import { COMPANY_EMAIL, COMPANY_PHONE, SITE_NAME, SITE_URL } from "./seo";
 
 export interface FAQItem {
@@ -13,8 +14,7 @@ export function organizationSchema() {
     alternateName: "ARK Global Asia",
     url: SITE_URL,
     logo: `${SITE_URL}/images/pic1.png`,
-    description:
-      "Global specialist in cryogenic shipping for IVF embryos, oocytes, sperm, and reproductive cells. Serving fertility clinics and patients internationally across 200+ countries.",
+    description: PROFESSIONAL_TAGLINE,
     email: COMPANY_EMAIL,
     telephone: COMPANY_PHONE,
     foundingLocation: {
@@ -25,7 +25,7 @@ export function organizationSchema() {
         addressCountry: "MY",
       },
     },
-    areaServed: "Worldwide",
+    areaServed: GEOGRAPHIC_REACH,
     sameAs: [
       "https://linkedin.com/in/ark-global-cryogenic-shipper-1721362a5",
     ],
@@ -77,10 +77,13 @@ export function medicalBusinessSchema() {
       closes: "23:59",
     },
     knowsAbout: [
+      "International cryogenic medical logistics",
       "IVF embryo transport",
+      "Frozen oocyte and sperm transport",
       "Cryogenic dry shipper logistics",
       "IATA P650 biological specimen shipping",
-      "International fertility sample import and export",
+      "IVF import and export permits",
+      "IVF customs clearance",
     ],
   };
 }
@@ -91,8 +94,7 @@ export function websiteSchema() {
     "@type": "WebSite",
     name: SITE_NAME,
     url: SITE_URL,
-    description:
-      "IATA-certified global cryo courier for international IVF and embryo shipping across 200+ countries worldwide.",
+    description: PROFESSIONAL_TAGLINE,
     publisher: { "@type": "Organization", name: SITE_NAME },
   };
 }
@@ -184,7 +186,7 @@ export function servicePageSchema(service: {
       name: SITE_NAME,
       url: SITE_URL,
     },
-    areaServed: "Worldwide",
+    areaServed: GEOGRAPHIC_REACH,
     serviceType: "Cryogenic reproductive tissue transport",
   };
 }

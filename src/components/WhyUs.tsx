@@ -34,7 +34,7 @@ const WhyUs = () => {
       icon: ShieldCheck,
       title: "Built to the Highest Standards",
       description:
-        "IATA/WHO-certified MVE dewars, full regulatory compliance, and protocols designed for the most delicate biological cargo on earth. Because 'good enough' is never good enough here.",
+        "LN₂ vapour-phase dry shippers (including MVE-class dewars where required), regulatory-aligned documentation, and protocols designed for cryopreserved reproductive specimens.",
     },
     {
       icon: CheckCheck,
@@ -71,13 +71,13 @@ const WhyUs = () => {
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
                 <span className="font-inter text-muted-foreground">
-                  100% cold chain success rate
+                  Documented chain of custody on every shipment
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
                 <span className="font-inter text-muted-foreground">
-                  IATA P650 certified couriers
+                  IATA P650-aligned courier protocols
                 </span>
               </div>
               <div className="flex items-center gap-3">

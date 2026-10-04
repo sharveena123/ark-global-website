@@ -147,8 +147,16 @@ const Testimonials = () => {
             <ChevronRight className="w-5 h-5 text-foreground" />
           </button>
 
+          <p className="font-inter text-xs text-muted-foreground text-center mt-8 max-w-xl mx-auto">
+            Clinic feedback shared for illustration. Request verifiable references from{" "}
+            <a href="mailto:operations@arkglobalasia.com" className="text-primary hover:underline">
+              operations@arkglobalasia.com
+            </a>{" "}
+            before citing in external materials.
+          </p>
+
           {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 gap-2">
+          <div className="flex justify-center mt-4 gap-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}

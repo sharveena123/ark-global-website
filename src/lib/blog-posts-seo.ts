@@ -180,7 +180,7 @@ export const seoBlogPosts: BlogPost[] = [
       },
       {
         type: "cta",
-        text: "ARKGlobal maintains a 100% cold chain success rate. Every shipment is monitored in real time from door to door.",
+        text: "ARK Global documents temperature and chain of custody on every shipment, with monitoring suitable for clinic review on arrival.",
       },
     ],
     faqs: [

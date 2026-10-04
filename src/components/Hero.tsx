@@ -37,19 +37,22 @@ const HeroSection: React.FC = () => {
           {/* Center Content */}
           <div className="flex-1 px-4 py-12 md:px-8 lg:px-16 text-center flex flex-col justify-center items-center min-h-[400px] lg:min-h-[600px]">
             <p className="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-3 font-inter">
-              Trusted by fertility clinics worldwide
+              International cryogenic medical logistics
             </p>
             <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-gray-800 font-bold mb-4 leading-tight font-poppins">
-              Protecting what matters most on your{" "}
-              <span className="text-blue-600">fertility journey</span>
+              Safely carrying hope across{" "}
+              <span className="text-blue-600">borders</span>
             </h1>
-            <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto mb-4 leading-relaxed font-inter">
-              We safely transport IVF samples, embryos, oocytes, and reproductive
-              cells worldwide — with the care, precision, and protection every step
-              of your journey deserves.
+            <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto mb-3 leading-relaxed font-inter">
+              IVF embryos, oocytes, sperm, and cryopreserved biological specimens — hand-carried
+              with LN₂ dry shippers, clinic coordination, and temperature monitoring.
+            </p>
+            <p className="text-sm text-gray-600 max-w-2xl mx-auto mb-4 leading-relaxed font-inter">
+              For patients: care and clarity on every step. For clinics: documented cold chain
+              logistics aligned with IATA P650 biological specimen transport principles.
             </p>
             <p className="text-sm text-gray-500 max-w-xl mx-auto mb-8 font-inter italic">
-              Behind every shipment is a story of hope. We&apos;re honoured to be part of yours.
+              Protecting what matters most on your fertility journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <ExternalLinkButton />
