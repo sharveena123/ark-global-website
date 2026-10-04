@@ -10,9 +10,9 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Knowledge Centre | IVF Cryogenic Transport Guides",
+  title: "Blog | IVF Cryogenic Transport Guides",
   description:
-    "ARK Global Knowledge Centre: expert guides on international IVF embryo transport, dry shippers, IATA P650, permits, and country corridors.",
+    "ARK Global Blog: expert guides on international IVF embryo transport, dry shippers, IATA P650, permits, and country corridors.",
   path: "/blog",
   keywords: [
     "IVF blog",
@@ -40,7 +40,7 @@ export default function BlogPage() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "Knowledge Centre", path: "/blog" },
+          { name: "Blog", path: "/blog" },
         ])}
       />
       <Navigation />
@@ -50,7 +50,7 @@ export default function BlogPage() {
         <div className="container mx-auto px-4 text-center">
           <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-inter font-medium mb-6">
             <BookOpen className="w-4 h-4" />
-            ARK Global Knowledge Centre
+            ARK Global Blog
           </div>
           <h1 className="font-poppins font-bold text-4xl lg:text-5xl text-white mb-4">
             IVF cryogenic transport <span className="text-primary">guides</span>

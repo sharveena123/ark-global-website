@@ -106,7 +106,7 @@ export default function EEAT() {
               Country corridors →
             </Link>
             <Link href="/blog" className="font-inter text-sm font-semibold text-primary hover:underline">
-              Knowledge Centre →
+              Blog →
             </Link>
           </div>
         </div>

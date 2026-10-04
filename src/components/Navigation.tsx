@@ -72,7 +72,7 @@ const Navigation: React.FC = () => {
             href="/blog"
             className={`hover:text-blue-500 transition-colors ${pathname.startsWith('/blog') ? 'text-blue-500' : ''}`}
           >
-            Knowledge Centre
+            Blog
           </Link>
           <a
             href={isHome ? '#contact' : '/#contact'}
@@ -134,7 +134,7 @@ const Navigation: React.FC = () => {
               onClick={() => setIsMenuOpen(false)}
               className={`px-6 py-3 hover:text-blue-500 hover:bg-gray-50 transition-colors text-left font-medium ${pathname.startsWith('/blog') ? 'text-blue-500' : 'text-gray-700'}`}
             >
-              Knowledge Centre
+              Blog
             </Link>
             <a
               href={isHome ? '#contact' : '/#contact'}

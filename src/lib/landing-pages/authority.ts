@@ -105,7 +105,7 @@ export const AUTHORITY_PAGE: LandingPageConfig = {
   relatedLinks: [
     { href: "/services", label: "All services" },
     { href: "/corridors", label: "Country corridors" },
-    { href: "/blog", label: "Knowledge Centre" },
+    { href: "/blog", label: "Blog" },
     { href: "/ivf-transport", label: "IVF transport overview" },
   ],
   meta: {

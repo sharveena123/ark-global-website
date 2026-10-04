@@ -4,7 +4,7 @@ import type { LandingPageConfig } from "@/lib/landing-pages/types";
 const sharedRelated = [
   { href: "/international-cryogenic-medical-logistics", label: "About ARK Global logistics" },
   { href: "/corridors", label: "Country corridors" },
-  { href: "/blog", label: "Knowledge Centre" },
+  { href: "/blog", label: "Blog" },
   { href: "/#contact", label: "Request a quotation" },
 ];
 
