@@ -1,9 +1,80 @@
 "use client";
 
-import { Plane, Thermometer, Globe2, Clock } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Plane, Thermometer, Globe2, Clock, Eye, TrendingUp } from "lucide-react";
+import { get, onValue, ref, runTransaction, set } from "firebase/database";
+import { isFirebaseInitialized, realtimeDb } from "@/lib/firebase";
 import { TRACK_RECORD } from "@/lib/company-facts";
 
 const Stats = () => {
+  const [visitorCounts, setVisitorCounts] = useState({
+    total: 0,
+    today: 0,
+  });
+  const [visitorTrackingError, setVisitorTrackingError] = useState(false);
+
+  useEffect(() => {
+    if (!isFirebaseInitialized || !realtimeDb) {
+      return;
+    }
+
+    const totalRef = ref(realtimeDb, "visitors/total");
+    const todayRef = ref(realtimeDb, "visitors/today");
+    const lastResetRef = ref(realtimeDb, "visitors/lastReset");
+    let isMounted = true;
+
+    const handleDatabaseError = (error: Error) => {
+      console.error("[ARKGlobal] Unable to load live visitor analytics.", error);
+      if (isMounted) {
+        setVisitorTrackingError(true);
+      }
+    };
+
+    const initializeVisitors = async () => {
+      try {
+        const today = new Date().toISOString().split("T")[0];
+        const lastResetSnapshot = await get(lastResetRef);
+
+        if (lastResetSnapshot.val() !== today) {
+          await set(todayRef, 0);
+          await set(lastResetRef, today);
+        }
+
+        await runTransaction(totalRef, (currentValue) => (currentValue || 0) + 1);
+        await runTransaction(todayRef, (currentValue) => (currentValue || 0) + 1);
+      } catch (error) {
+        handleDatabaseError(error instanceof Error ? error : new Error(String(error)));
+      }
+    };
+
+    const unsubscribeTotal = onValue(
+      totalRef,
+      (snapshot) => {
+        if (isMounted) {
+          setVisitorCounts((current) => ({ ...current, total: snapshot.val() || 0 }));
+        }
+      },
+      handleDatabaseError
+    );
+    const unsubscribeToday = onValue(
+      todayRef,
+      (snapshot) => {
+        if (isMounted) {
+          setVisitorCounts((current) => ({ ...current, today: snapshot.val() || 0 }));
+        }
+      },
+      handleDatabaseError
+    );
+
+    void initializeVisitors();
+
+    return () => {
+      isMounted = false;
+      unsubscribeTotal();
+      unsubscribeToday();
+    };
+  }, []);
+
   const stats = [
     {
       icon: Plane,
@@ -67,6 +138,51 @@ const Stats = () => {
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-16">
+          <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-3xl p-8 border border-primary/20">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="relative flex items-center justify-center">
+                <div className={`w-3 h-3 rounded-full z-10 ${visitorTrackingError ? "bg-muted-foreground" : "bg-green-500"}`} />
+                {!visitorTrackingError ? (
+                  <div className="absolute w-3 h-3 bg-green-500 rounded-full animate-ping opacity-40" />
+                ) : null}
+              </div>
+              <h3 className="font-poppins font-semibold text-xl text-foreground">
+                Live Website Analytics
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="bg-background/60 backdrop-blur-sm rounded-xl p-6 text-center border border-border/30">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <Eye className="w-6 h-6 text-primary" />
+                  <p className="font-inter text-sm text-muted-foreground font-medium">Total Visitors</p>
+                </div>
+                <div className="font-poppins font-bold text-4xl text-primary">
+                  {visitorCounts.total.toLocaleString()}
+                </div>
+              </div>
+
+              <div className="bg-background/60 backdrop-blur-sm rounded-xl p-6 text-center border border-border/30">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <TrendingUp className="w-6 h-6 text-accent" />
+                  <p className="font-inter text-sm text-muted-foreground font-medium">Today&apos;s Visitors</p>
+                </div>
+                <div className="font-poppins font-bold text-4xl text-accent">
+                  {visitorCounts.today.toLocaleString()}
+                </div>
+              </div>
+            </div>
+
+            <p className="mt-6 text-center font-inter text-xs text-muted-foreground">
+              <span className={visitorTrackingError ? "text-muted-foreground" : "text-primary"}>●</span>{" "}
+              {visitorTrackingError
+                ? "Live visitor analytics are temporarily unavailable."
+                : "Real-time updates"}
+            </p>
+          </div>
         </div>
       </div>
 
